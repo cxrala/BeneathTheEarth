@@ -9,6 +9,7 @@ public class SkillButton : MonoBehaviour
 {
     public Button mybutton;
     public CombatControl mycombat;
+    public Entity performer;
     public TMP_Text mytimeline;
     public TMP_Text myapleft;
 
@@ -27,13 +28,11 @@ public class SkillButton : MonoBehaviour
             if (s.display_name == mybuttontext){
                 if (mycombat.hero_ap_left >= s.ap_cost){
                     mytimeline.text += mybuttontext+"\n";
-                    mycombat.hero_timeline.Add(s);
+                    mycombat.hero_timeline.Add(new CombatControl.Action() { skill = s, performer = performer, target = null });
                     mycombat.hero_ap_left -= s.ap_cost;
                     myapleft.text = mycombat.hero_ap_left.ToString();
                 }
             }
         }
     }
-
-
 }

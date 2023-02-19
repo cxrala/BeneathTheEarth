@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,21 +9,32 @@ public class Skill
     public string display_name = "";
     public int ap_cost = 0;
     public int[] health_change = {1, 6, 0};
-    public int target_mode = 0; // 1 = Enemy, -1 = Weakest Party Member, -2 = All party members, -3 = Random party member
-    
+    public int target_mode = 0; // 2 = All Enemy, 1 = Enemy, -1 = Weakest Party Member, -2 = All party members, -3 = Random party member
+
     // public struct status_info {
     //     public string name;
     //     public float chance;
     //     public int duration;
     // }
 
-    public struct status_data {
+    [System.Serializable]
+    public struct StatusData {
+        public Status status;
         public float chance;
         public int duration;
+        public float power;
+    }
+
+    [System.Serializable]
+    public enum Status {
+        evasive = 0,
+        stunned = 1,
+        shielded = 2,
+        weak = 3
     }
     
     // public List<status_info> status_list;
-    public IDictionary<string, status_data> statuses;
+    public List<StatusData> statuses;
 
     void Start(){
         // this.statuses = new Dictionary<string, status_data>();
@@ -34,9 +46,9 @@ public class Skill
         // }
     }
 
-    public void Use(List<Entity> targets){
+    public void Use(List<Entity> targets, Entity performer){
         for (int i=0; i<targets.Count; i++){
-            ApplySkill(targets[i]);
+            ApplySkill(targets[i], performer);
         }
     }
 
@@ -49,26 +61,28 @@ public class Skill
         }
         int total = mod;
         for (int i=0; i<number; i++){
-            total += Random.Range(1, size+1);
+            total += UnityEngine.Random.Range(1, size+1);
         }
         return total*multiplier;
     }
 
-    public void ApplySkill(Entity target){
-        target.ChangeHealth(Resolve(health_change[0], health_change[1], health_change[2]));
-        foreach (var (key, value) in statuses)
+    public void ApplySkill(Entity target, Entity performer){
+        int change = Resolve(health_change[0], health_change[1], health_change[2]);
+        if (change > 0 && performer.IsAffected(Skill.Status.weak)) {
+            change = Math.Max(1, change - (int) performer.EffectPower(Skill.Status.weak));
+        }
+        target.ChangeHealth(change);
+        foreach (StatusData data in statuses)
         {
-            string name = key;
-            float chance = value.chance;
-            int duration = value.duration;
-            float decision = Random.Range(0.0f, 1.0f);
+            float chance = data.chance;
+            float decision = UnityEngine.Random.Range(0.0f, 1.0f);
             if (decision < chance){
-                target.ModStatus(name, duration);
+                target.ModStatus(data.status, data.duration, data.power);
             }
         }
     }
 
-    public Skill(string skill_id, string display_name, int ap_cost, int target_mode, int[] health_change, IDictionary<string, status_data> statuses){
+    public Skill(string skill_id, string display_name, int ap_cost, int target_mode, int[] health_change, List<StatusData> statuses){
         // Skill nullSkill = new Skill(){skill_id = "null", display_name = "Nothing", ap_cost = 0, health_change = {0, 0, 0}};
         // return nullSkill;
         this.skill_id = skill_id;
