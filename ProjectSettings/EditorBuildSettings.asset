@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/TitleScene.unity
+    guid: 7a0b90fc086b8454cbac529f6085ffeb
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Cutscene1.unity
+    guid: c923d02a12f90d94ca5bb6777ce892d5
+  - enabled: 1
+    path: Assets/Scenes/Dungeons/Dungeon1.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Cutscene2.unity
+    guid: faec9c7b72866fb4a819f7b5398424ac
+  - enabled: 1
+    path: Assets/Scenes/Dungeons/Dungeon2.unity
+    guid: d41e439faf1f8944b9bcb73488cadcd9
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Cutscene3.unity
+    guid: ac81dbbabb043ce478b6580facde62b5
+  - enabled: 1
+    path: Assets/Scenes/Dungeons/Dungeon3.unity
+    guid: 051d0e74ba88c924fa86771c70212739
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Cutscene4.unity
+    guid: dcdcb3166ea78c1458c843f093a05bc4
+  - enabled: 1
+    path: Assets/Scenes/Combat/Battle.unity
+    guid: 78f1e757b8bc5814db8ddbcf6a45aaac
+  m_configObjects: {}

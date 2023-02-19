@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - SpawnPoint
+  - Fighter
+  - SkillButton
+  - Tracker
+  - Dialogue
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Actor
+  - Water
+  - UI
+  - Blocking
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2602727055
+    locked: 0
+  - name: Floor
+    uniqueID: 870382923
+    locked: 0
+  - name: Floor Decals
+    uniqueID: 1555448339
+    locked: 0
+  - name: Walls
+    uniqueID: 1167371081
+    locked: 0
+  - name: Wall Decals
+    uniqueID: 9402541
+    locked: 0
+  - name: Actors
+    uniqueID: 3966691533
+    locked: 0
+  - name: UI
+    uniqueID: 3940851495
+    locked: 0
