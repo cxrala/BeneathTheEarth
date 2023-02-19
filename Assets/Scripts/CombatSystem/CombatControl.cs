@@ -103,7 +103,8 @@ public class CombatControl : MonoBehaviour
             tempRect.offsetMin = new Vector2(0.5F, 0.5F);
             tempRect.pivot = new Vector2(0.5F, 0.5F);
             tempRect.anchoredPosition = new Vector2(0, 0) + enemyCentre;
-            temp.display_name = enemy.types[i];
+            temp.type = enemy.types[i];
+            temp.displayName = enemy.names[i];
             temp.is_enemy = true;
             temp.level = enemyLevel;
             temp.SetEnemySkills(enemy.maxHitpoints[i], enemy.levels[i]);

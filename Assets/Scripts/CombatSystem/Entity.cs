@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Entity : MonoBehaviour
 {
     public int health = 12;
     public int max_health = 12;
-    public string display_name = "";
+    public string type = "";
+    public string displayName = "";
     public List<string> skills = new List<string>();
     public IDictionary<string, int> statuses = new Dictionary<string, int>();
     public bool is_enemy = false;
     public HealthBar bar;
     public SpriteBox box;
+    public SpriteBox evasionStatus;
+    public SpriteBox shieldedStatus;
+    public TMP_Text nameText;
     public Color baseBackground = new Color(0.25F, 0.25F, 0.25F, 1);
     public Color hurtBackground = new Color(1, 0.25F, 0.25F, 1);
     public Color healBackground = new Color(0, 0.8F, 0, 1);
@@ -21,6 +26,10 @@ public class Entity : MonoBehaviour
     public Sprite attacking;
     public Sprite hurt;
     public Sprite low;
+    public Sprite evasionIcon;
+    public Sprite stunnedIcon;
+    public Sprite shieldedIcon;
+    public Sprite weakIcon;
     public string hurtSound = "hurt";
     public string healSound = "heal";
     public int level = 0;
@@ -32,6 +41,12 @@ public class Entity : MonoBehaviour
         sfx = GameObject.Find("SFX Engine").GetComponent<SFXEngine>();
         box.SetBackgroundColor(baseBackground);
         bar.SetValAndMaxVal(this.health, this.max_health);
+        nameText.text = displayName;
+    }
+
+    public void SetName(string name) {
+        this.displayName = name;
+        this.nameText.text = name;
     }
 
     public void SetEnemySkills(int health, int level)
@@ -46,7 +61,7 @@ public class Entity : MonoBehaviour
                 new_health += 3 + droll;
             }
             this.SetHealth(new_health, new_health);
-            switch (this.display_name)
+            switch (this.type)
             {
                 case "bat":
                     typeId = 0;
