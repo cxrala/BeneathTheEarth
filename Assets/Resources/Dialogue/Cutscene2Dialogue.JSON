@@ -1,0 +1,98 @@
+{
+  "sprites": [
+    {
+      "key": "arki",
+      "path": "Sprites/Characters/arki"
+    },
+    {
+      "key": "hila",
+      "path": "Sprites/Characters/hila"
+    },
+    {
+      "key": "chonk",
+      "path": "Sprites/Characters/chonk"
+    },
+    {
+      "key": "konkon",
+      "path": "Sprites/Characters/konkon"
+    }
+  ],
+  "audios": [
+    {
+      "key": "arki",
+      "path": "SFX/Voices/arki"
+    },
+    {
+      "key": "hila",
+      "path": "SFX/Voices/hila"
+    },
+    {
+      "key": "chonk",
+      "path": "SFX/Voices/chonk"
+    },
+    {
+      "key": "konkon",
+      "path": "SFX/Voices/konkon"
+    }
+  ],
+  "dialogue": [
+    {
+      "name": "CHONK",
+      "sprite": "chonk_3",
+      "audio": "chonk",
+      "sentences": [
+        "This is the dialogue for cutscene 2. "
+      ]
+    },
+    {
+      "name": "KONKON",
+      "sprite": "konkon_0",
+      "audio": "konkon",
+      "sentences": [
+        "Konkon. Konkon."
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_2",
+      "audio": "arki",
+      "sentences": [
+        "Konkon is right.",
+        "We really need to actually fix the dialogue.",
+        "Sorry Amelia and Monami for accidentally deleting your hard work."
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_4",
+      "audio": "arki",
+      "sentences": [
+        "Just know that it was really good."
+      ]
+    },
+    {
+      "name": "KONKON",
+      "sprite": "konkon_1",
+      "audio": "konkon",
+      "sentences": [
+        "Konkon. Konkon."
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_1",
+      "audio": "hila",
+      "sentences": [
+        "Uhhhhh."
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_5",
+      "audio": "hila",
+      "sentences": [
+        "Let's just move onto the next dungeon."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "sprites": [
+    {
+      "key": "arki",
+      "path": "Sprites/Characters/arki"
+    },
+    {
+      "key": "hila",
+      "path": "Sprites/Characters/hila"
+    },
+    {
+      "key": "chonk",
+      "path": "Sprites/Characters/chonk"
+    },
+    {
+      "key": "konkon",
+      "path": "Sprites/Characters/konkon"
+    }
+  ],
+  "audios": [
+    {
+      "key": "arki",
+      "path": "SFX/Voices/arki"
+    },
+    {
+      "key": "hila",
+      "path": "SFX/Voices/hila"
+    },
+    {
+      "key": "chonk",
+      "path": "SFX/Voices/chonk"
+    },
+    {
+      "key": "konkon",
+      "path": "SFX/Voices/konkon"
+    }
+  ],
+  "dialogue": [
+    {
+      "name": "KONKON",
+      "sprite": "konkon_0",
+      "audio": "konkon",
+      "sentences": [
+        "Konkon! KONKON!"
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_0",
+      "audio": "arki",
+      "sentences": [
+        "Phew! We reached the end!"
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_3",
+      "audio": "arki",
+      "sentences": [
+        "I told you we'd make it!"
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_0",
+      "audio": "hila",
+      "sentences": [
+        "I'm surprised nothing crashed but..."
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_3",
+      "audio": "hila",
+      "sentences": [
+        "I'll take it. "
+      ]
+    },
+    {
+      "name": "CHONK",
+      "sprite": "chonk_3",
+      "audio": "chonk",
+      "sentences": [
+        "Good work everyone!"
+      ]
+    },
+    {
+      "name": "CHONK",
+      "sprite": "chonk_1",
+      "audio": "chonk",
+      "sentences": [
+        "We may still have a long way to go before this is actually good..."
+      ]
+    },
+    {
+      "name": "CHONK",
+      "sprite": "chonk_3",
+      "audio": "chonk",
+      "sentences": [
+        "But we can be proud of how far we've come so far."
+      ]
+    },
+    {
+      "name": "KONKON",
+      "sprite": "konkon_0",
+      "audio": "konkon",
+      "sentences": [
+        "KONKON!"
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_3",
+      "audio": "arki",
+      "sentences": [
+        "Anyway, let's head back to the title screen now."
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_0",
+      "audio": "arki",
+      "sentences": [
+        "We can take a break after this adventure."
+      ]
+    }
+  ]
+}

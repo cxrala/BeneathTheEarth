@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dac04dbe5e17be4a96baa2a142b828d, type: 3}
+  m_Name: Dungeon3Wall
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: -2069652835, guid: 9d326912006dd604fbd3a0b30fe2e51a, type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 1
+  m_TilingRules:
+  - m_Id: 1
+    m_Sprites:
+    - {fileID: -2069652835, guid: 9d326912006dd604fbd3a0b30fe2e51a, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: -1711928202, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: -1711928202, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 621984347, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.638
+    m_Output: 0
+    m_ColliderType: 1
+    m_RandomTransform: 2
+    m_Neighbors: 0100000001000000
+    m_NeighborPositions:
+    - {x: 1, y: 0, z: 0}
+    - {x: -1, y: 0, z: 0}
+    m_RuleTransform: 0
+  - m_Id: 0
+    m_Sprites:
+    - {fileID: 1918661438, guid: 9d326912006dd604fbd3a0b30fe2e51a, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: -1711928202, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: -1711928202, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 621984347, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.638
+    m_Output: 0
+    m_ColliderType: 1
+    m_RandomTransform: 2
+    m_Neighbors: 0100000002000000
+    m_NeighborPositions:
+    - {x: 1, y: 0, z: 0}
+    - {x: -1, y: 0, z: 0}
+    m_RuleTransform: 0
+  - m_Id: 2
+    m_Sprites:
+    - {fileID: 1567317478, guid: 9d326912006dd604fbd3a0b30fe2e51a, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 595986415, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: -1711928202, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: -1711928202, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    - {fileID: 621984347, guid: 56e32e4a2cb8bfc42a65363a3f46bbe0, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.638
+    m_Output: 0
+    m_ColliderType: 1
+    m_RandomTransform: 2
+    m_Neighbors: 0100000002000000
+    m_NeighborPositions:
+    - {x: -1, y: 0, z: 0}
+    - {x: 1, y: 0, z: 0}
+    m_RuleTransform: 0
+  linkTo:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: 020c471275b854f4c8863acc39ca003f, type: 2}

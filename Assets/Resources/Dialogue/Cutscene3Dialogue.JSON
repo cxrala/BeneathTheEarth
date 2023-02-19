@@ -1,0 +1,217 @@
+{
+  "sprites": [
+    {
+      "key": "arki",
+      "path": "Sprites/Characters/arki"
+    },
+    {
+      "key": "hila",
+      "path": "Sprites/Characters/hila"
+    },
+    {
+      "key": "chonk",
+      "path": "Sprites/Characters/chonk"
+    },
+    {
+      "key": "konkon",
+      "path": "Sprites/Characters/konkon"
+    }
+  ],
+  "audios": [
+    {
+      "key": "arki",
+      "path": "SFX/Voices/arki"
+    },
+    {
+      "key": "hila",
+      "path": "SFX/Voices/hila"
+    },
+    {
+      "key": "chonk",
+      "path": "SFX/Voices/chonk"
+    },
+    {
+      "key": "konkon",
+      "path": "SFX/Voices/konkon"
+    }
+  ],
+  "dialogue": [
+    {
+      "name": "KONKON",
+      "sprite": "konkon_0",
+      "audio": "konkon",
+      "sentences": [
+        "Konkon! Konkon!"
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_2",
+      "audio": "arki",
+      "sentences": [
+        "This is supposed to be sad?"
+      ]
+    },
+    {
+      "name": "CHONK",
+      "sprite": "chonk_4",
+      "audio": "chonk",
+      "sentences": [
+        "Like this?"
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_4",
+      "audio": "arki",
+      "sentences": [
+        "I guess... that explains... the music..."
+      ]
+    },
+    {
+      "name": "KONKON",
+      "sprite": "konkon_0",
+      "audio": "konkon",
+      "sentences": [
+        "Konkon! Konkon!"
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_1",
+      "audio": "hila",
+      "sentences": [
+        "What is wrong with you?",
+        "Also how did you even understand what Konkon was saying?"
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_1",
+      "audio": "arki",
+      "sentences": [
+        "You didn't understand?"
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_6",
+      "audio": "hila",
+      "sentences": [
+        "It's a fox? Like you can understand 'konkon' this 'konkon' that."
+      ]
+    },
+    {
+      "name": "KONKON",
+      "sprite": "konkon_0",
+      "audio": "konkon",
+      "sentences": [
+        "Konkon! Konkon! Konkonkon KONKONKON!"
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_5",
+      "audio": "arki",
+      "sentences": [
+        "Konkon says that it's offended by your presumptions, but will magnanimously let you off this time."
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_6",
+      "audio": "hila",
+      "sentences": [
+        "Arki, it's a flipping FOX! It can't be magnanimous!"
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_6",
+      "audio": "arki",
+      "sentences": [
+        "Yes it can!"
+      ]
+    },
+    {
+      "name": "CHONK",
+      "sprite": "chonk_5",
+      "audio": "chonk",
+      "sentences": [
+        "Hey! As much as Hila is wrong about this let's just stop arguing and get going. "
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_2",
+      "audio": "hila",
+      "sentences": [
+        "You're on Arki's side as well?????"
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_6",
+      "audio": "arki",
+      "sentences": [
+        "This was meant to be a sad moment and you've RUINED IT!"
+      ]
+    },
+    {
+      "name": "CHONK",
+      "sprite": "chonk_2",
+      "audio": "chonk",
+      "sentences": [
+        "Everyone, calm down please..."
+      ]
+    },
+    {
+      "name": "KONKON",
+      "sprite": "konkon_0",
+      "audio": "konkon",
+      "sentences": [
+        "Konkon!!"
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_5",
+      "audio": "hila",
+      "sentences": [
+        "..."
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_5",
+      "audio": "arki",
+      "sentences": [
+        "..."
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_5",
+      "audio": "hila",
+      "sentences": [
+        "Fine then. Whatever..."
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_1",
+      "audio": "arki",
+      "sentences": [
+        "Okay then."
+      ]
+    },
+    {
+      "name": "CHONK",
+      "sprite": "chonk_2",
+      "audio": "chonk",
+      "sentences": [
+        "Can we go now?"
+      ]
+    }
+  ]
+}

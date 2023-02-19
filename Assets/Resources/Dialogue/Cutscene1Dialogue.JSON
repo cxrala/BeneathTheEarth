@@ -1,0 +1,112 @@
+{
+  "sprites": [
+    {
+      "key": "arki",
+      "path": "Sprites/Characters/arki"
+    },
+    {
+      "key": "hila",
+      "path": "Sprites/Characters/hila"
+    },
+    {
+      "key": "chonk",
+      "path": "Sprites/Characters/chonk"
+    }
+  ],
+  "audios": [
+    {
+      "key": "arki",
+      "path": "SFX/Voices/arki"
+    },
+    {
+      "key": "hila",
+      "path": "SFX/Voices/hila"
+    },
+    {
+      "key": "chonk",
+      "path": "SFX/Voices/chonk"
+    }
+  ],
+  "dialogue": [
+    {
+      "name": "ARKI",
+      "sprite": "arki_3",
+      "audio": "arki",
+      "sentences": [
+        "I am GOD.",
+        "Once again, my navigation skills led us to VICTORY!!"
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_0",
+      "audio": "hila",
+      "sentences": [
+        "Arki, we literally missed the entrance of this place 5 times because you insisted on turning right."
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_1",
+      "audio": "arki",
+      "sentences": [
+        "What are you talking about?",
+        "There's no way we could have reached this place if I listened to you and turned left.",
+        "We literally would have-",
+        "We literally would have-",
+        "Line!"
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_1",
+      "audio": "hila",
+      "sentences": [
+        "You seriously forgot the line?"
+      ]
+    },
+    {
+      "name": "ARKI",
+      "sprite": "arki_1",
+      "audio": "arki",
+      "sentences": [
+        "Look we only had 48 hours to memorise the script!",
+        "It's... it's not easy..."
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_1",
+      "audio": "hila",
+      "sentences": [
+        "No it's easy alright!"
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_3",
+      "audio": "arki",
+      "sentences": [
+        "There's no way we could have reached this place if I listened to you and turned left.",
+        "We literally would have gone in the opposite direction. "
+      ]
+    },
+    {
+      "name": "HILA",
+      "sprite": "hila_6",
+      "audio": "hila",
+      "sentences": [
+        "See?",
+        "I remember your lines as well as mine!"
+      ]
+    },
+    {
+      "name": "CHONK",
+      "sprite": "chonk_5",
+      "audio": "chonk",
+      "sentences": [
+        "Let's just... cut it here and go to the gameplay."
+      ]
+    }
+  ]
+}
