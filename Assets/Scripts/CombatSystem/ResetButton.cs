@@ -23,7 +23,7 @@ public class ResetButton : MonoBehaviour
     void ClearSchedule()
     {
         mytimeline.text = "";
-        mycombat.hero_timeline = new List<Skill>();
+        mycombat.hero_timeline = new List<CombatControl.Action>();
         mycombat.hero_ap_left = 4;
         myapleft.text = 4.ToString();
     }

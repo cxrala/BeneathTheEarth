@@ -9,13 +9,19 @@ using TMPro;
 
 public class CombatControl : MonoBehaviour
 {
+    public struct Action {
+        public Skill skill;
+        public Entity performer;
+        public List<Entity> target;
+    }
+
     public List<Entity> heroes = new List<Entity>();
     public List<Entity> enemies = new List<Entity>();
     public Sprite[] normal = new Sprite[4];
     public Sprite[] hurt = new Sprite[4];
     public Sprite[] low = new Sprite[4];
-    public List<Skill> hero_timeline = new List<Skill>();
-    public List<Skill> enemy_timeline = new List<Skill>();
+    public List<Action> hero_timeline = new List<Action>();
+    public List<Action> enemy_timeline = new List<Action>();
 
     public List<Skill> available_skills = new List<Skill>();
 
@@ -99,11 +105,12 @@ public class CombatControl : MonoBehaviour
             Entity temp = Instantiate(enemyPrefab, new Vector3(0, 0, 0), Quaternion.identity).GetComponent<Entity>();
             temp.transform.parent = canvas.transform;
             RectTransform tempRect = temp.GetComponent<RectTransform>();
-            tempRect.offsetMax = new Vector2(0.5F, 0.5F);
-            tempRect.offsetMin = new Vector2(0.5F, 0.5F);
+            tempRect.anchorMax = new Vector2(0.5F, 0.5F);
+            tempRect.anchorMin = new Vector2(0.5F, 0.5F);
             tempRect.pivot = new Vector2(0.5F, 0.5F);
             tempRect.anchoredPosition = new Vector2(0, 0) + enemyCentre;
-            temp.display_name = enemy.types[i];
+            temp.type = enemy.types[i];
+            temp.displayName = enemy.names[i];
             temp.is_enemy = true;
             temp.level = enemyLevel;
             temp.SetEnemySkills(enemy.maxHitpoints[i], enemy.levels[i]);
@@ -133,21 +140,28 @@ public class CombatControl : MonoBehaviour
             other_buttons[i].GetComponent<Button>().enabled = true;
         }
 
-        hero_timeline = new List<Skill>();
-        enemy_timeline = new List<Skill>();
+        hero_timeline = new List<Action>();
+        enemy_timeline = new List<Action>();
         hero_timeline_text.text = "";
         enemy_timeline_text.text = "";
         hero_ap_left = 4;
         ap_left.text = hero_ap_left.ToString();
 
         // Line up enemy actions for this round.
-        enemy_timeline = myskills.StringsToSkills(enemies[0].skills);
-        if (enemies[0].statuses.ContainsKey("stunned")){
-            enemy_timeline[0] = myskills.nullSkill;
+        enemy_timeline.Clear();
+        foreach (Entity e in enemies) {
+            e.UpdateStatuses();
+            if (!e.statuses.ContainsKey(Skill.Status.stunned)) {
+                foreach (string s in e.skills) {
+                    if (s != "nullSkill") {
+                        enemy_timeline.Add(new Action() { skill = myskills.all_skills[s], performer = e, target = null });
+                    }
+                }
+            }
         }
         string new_enemy_timeline = "";
-        foreach (Skill s in enemy_timeline){
-            new_enemy_timeline += s.display_name+'\n';
+        foreach (Action a in enemy_timeline){
+            new_enemy_timeline += a.skill.display_name+'\n';
         }
         enemy_timeline_text.text = new_enemy_timeline;
         // Show all hero skill buttons
@@ -156,26 +170,24 @@ public class CombatControl : MonoBehaviour
         GameObject.Find("Execute").SetActive(true);
 
         available_skills = new List<Skill>();
-        foreach (Entity hero in heroes){
+        foreach (Entity hero in heroes) {
+            hero.UpdateStatuses();
             foreach (Skill s in myskills.StringsToSkills(hero.skills)){
                 available_skills.Add(s);
-                Debug.Log(s.display_name);
             }
         }
 
         List<GameObject> buttons_to_reactivate = new List<GameObject>();
         foreach (Skill s in available_skills){
             GameObject target = GameObject.Find(s.display_name);
-            Debug.Log(s.display_name + "|" + target.name);
             buttons_to_reactivate.Add(target);
         };
 
-        foreach (GameObject g in skill_buttons){
+        foreach (GameObject g in skill_buttons) {
             g.SetActive(false);
         };
 
-        foreach (GameObject g in buttons_to_reactivate){
-            Debug.Log(g.name);
+        foreach (GameObject g in buttons_to_reactivate) {
             g.SetActive(true);
         }
     }
@@ -198,15 +210,15 @@ public class CombatControl : MonoBehaviour
 
         // List<Skill> hero_skills = new List<Skill>(hero_timeline);
         for (int i=0; i<hero_timeline.Count; i++){
-            Skill s = hero_timeline[i];
-            if (s.target_mode == 1){
-                s.ApplySkill(enemies[0]);
-            }else if (s.target_mode == -1){
-                s.ApplySkill(GetWeakestEntity(heroes)); // just buff hero with lowest hp
-            }else if (s.target_mode == -2){
-                s.Use(heroes);
-            }else if (s.target_mode == -3){
-                s.ApplySkill(GetRandomEntity(heroes));
+            Action a = hero_timeline[i];
+            if (a.skill.target_mode == 1){
+                a.skill.ApplySkill(enemies[0], a.performer);
+            } else if (a.skill.target_mode == -1){
+                a.skill.ApplySkill(GetWeakestEntity(heroes), a.performer); // just buff hero with lowest hp
+            } else if (a.skill.target_mode == -2){
+                a.skill.Use(heroes, a.performer);
+            } else if (a.skill.target_mode == -3){
+                a.skill.ApplySkill(GetRandomEntity(heroes), a.performer);
             }
             List<string> hero_timeline_list = new List<string>(hero_timeline_text.text.Split('\n'));
             hero_timeline_list.RemoveAt(0);
@@ -240,24 +252,24 @@ public class CombatControl : MonoBehaviour
         Debug.Log("hero moves done.");
         // List<Skill> enemy_skills = new List<Skill>(enemy_timeline);
         for (int i=0; i<enemy_timeline.Count; i++){
-            Skill s = enemy_timeline[i];
-            if (!enemies[0].IsDead())
+            Action a = enemy_timeline[i];
+            if (!a.performer.IsDead() && !a.performer.IsStunned())
             {
-                if (s.target_mode == 1)
+                if (a.skill.target_mode == 1)
                 {
-                    s.ApplySkill(enemies[0]);
+                    a.skill.ApplySkill(enemies[0], a.performer);
                 }
-                else if (s.target_mode == -1)
+                else if (a.skill.target_mode == -1)
                 {
-                    s.ApplySkill(GetWeakestEntity(heroes)); // just buff hero with lowest hp
+                    a.skill.ApplySkill(GetWeakestEntity(heroes), a.performer); // just buff hero with lowest hp
                 }
-                else if (s.target_mode == -2)
+                else if (a.skill.target_mode == -2)
                 {
-                    s.Use(heroes);
+                    a.skill.Use(heroes, a.performer);
                 }
-                else if (s.target_mode == -3)
+                else if (a.skill.target_mode == -3)
                 {
-                    s.ApplySkill(GetRandomEntity(heroes));
+                    a.skill.ApplySkill(GetRandomEntity(heroes), a.performer);
                 }
             }
 

@@ -130,6 +130,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1472934487}
     m_Modifications:
+    - target: {fileID: 391063618499519576, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
+      propertyPath: m_text
+      value: 'Chonk
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 4705742843071429530, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -631,6 +637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 155446415}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 159783862}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1001 &159783860
@@ -640,6 +647,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1472934487}
     m_Modifications:
+    - target: {fileID: 391063618499519576, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
+      propertyPath: m_text
+      value: Konkon
+      objectReference: {fileID: 0}
     - target: {fileID: 4705742843071429530, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -931,6 +942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 204350195}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 353416014}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1 &278283025
@@ -1082,6 +1094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 278283027}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 101479535}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1001 &353416012
@@ -1091,6 +1104,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1472934487}
     m_Modifications:
+    - target: {fileID: 391063618499519576, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
+      propertyPath: m_text
+      value: Arki
+      objectReference: {fileID: 0}
     - target: {fileID: 4705742843071429530, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1386,6 +1403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 405312444}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 101479535}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1001 &426365187
@@ -1395,6 +1413,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1472934487}
     m_Modifications:
+    - target: {fileID: 391063618499519576, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
+      propertyPath: m_text
+      value: Hila
+      objectReference: {fileID: 0}
     - target: {fileID: 4705742843071429530, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2649,6 +2671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 664684488}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 426365189}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1 &674082779
@@ -3207,6 +3230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 1012935517}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 426365189}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1 &1120811832
@@ -3632,6 +3656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 1230741583}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 159783862}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1 &1249991482
@@ -4813,6 +4838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 1522775850}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 426365189}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1 &1532367286
@@ -5350,6 +5376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 1600423759}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 353416014}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1 &1603252848
@@ -5501,6 +5528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 1603252850}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 426365189}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1 &1612957213
@@ -6603,6 +6631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 1909520012}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 101479535}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1 &1947686719
@@ -6754,6 +6783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 1947686721}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 353416014}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1 &1958762258
@@ -6981,6 +7011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 2000451179}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 353416014}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1 &2037221121
@@ -7267,6 +7298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mybutton: {fileID: 2052815390}
   mycombat: {fileID: 133208396}
+  performer: {fileID: 101479535}
   mytimeline: {fileID: 1745053185}
   myapleft: {fileID: 2037221123}
 --- !u!1 &2112190406
