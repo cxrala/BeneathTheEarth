@@ -281,6 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7587181488565604525}
   - component: {fileID: 7587181488565604498}
+  - component: {fileID: 3580211794895217697}
   - component: {fileID: 8231339901165693465}
   m_Layer: 5
   m_Name: BattleDisplay
@@ -326,31 +327,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 12
-  max_health: 12
+  maxHealth: 12
   type: 
   displayName: 
-  skills:
-  - nullSkill
-  - batscreech
-  - nullSkill
-  - batscreech
+  skills: []
   is_enemy: 0
-  bar: {fileID: 1782529542165379936}
-  box: {fileID: 4695561133982819123}
-  nameText: {fileID: 391063618499519576}
-  baseBackground: {r: 0.25490198, g: 0.25490198, b: 0.25490198, a: 1}
-  hurtBackground: {r: 1, g: 0, b: 0, a: 1}
-  healBackground: {r: 0, g: 0.5943396, b: 0, a: 1}
-  flashTime: 250
-  normal: {fileID: -348470134, guid: ca330c1ebb264499c969e5fe93bdf59a, type: 3}
-  attacking: {fileID: -1927391821, guid: ca330c1ebb264499c969e5fe93bdf59a, type: 3}
-  hurt: {fileID: 1039022085, guid: ca330c1ebb264499c969e5fe93bdf59a, type: 3}
-  low: {fileID: -1300525420, guid: ca330c1ebb264499c969e5fe93bdf59a, type: 3}
-  statusDisplay: {fileID: 8692535675218476295}
-  hurtSound: hurt
-  healSound: heal
   level: 0
   typeId: -1
+  display: {fileID: 3580211794895217697}
+--- !u!114 &3580211794895217697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587181488565604524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9898983821093145a52b44bd67074e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseEntity: {fileID: 7587181488565604498}
+  bar: {fileID: 1782529542165379936}
+  box: {fileID: 4695561133982819123}
+  statusDisplay: {fileID: 8692535675218476295}
+  nameText: {fileID: 391063618499519576}
+  baseBackground: {r: 0.25, g: 0.25, b: 0.25, a: 1}
+  hurtBackground: {r: 1, g: 0.25, b: 0.25, a: 1}
+  healBackground: {r: 0, g: 0.8, b: 0, a: 1}
+  hurtSound: hurt
+  healSound: heal
+  flashTime: 50
+  normal: {fileID: 0}
+  attacking: {fileID: 0}
+  hurt: {fileID: 0}
+  low: {fileID: 0}
+  spriteAnimator: {fileID: 0}
 --- !u!222 &8231339901165693465
 CanvasRenderer:
   m_ObjectHideFlags: 0

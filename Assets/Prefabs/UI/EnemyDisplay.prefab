@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3580211794895217697, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
+      propertyPath: spriteAnimator
+      value: 
+      objectReference: {fileID: 1179612261397734142}
     - target: {fileID: 7587181488565604498, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
       propertyPath: healSound
       value: heal
