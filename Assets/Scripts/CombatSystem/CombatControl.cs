@@ -115,7 +115,7 @@ public class CombatControl : MonoBehaviour
             temp.level = enemyLevel;
             temp.SetEnemySkills(enemy.maxHitpoints[i], enemy.levels[i]);
             //temp.box.spriteImage.transform.localScale = new Vector3(2, 2, 1);
-            temp.box.spriteImage.gameObject.GetComponent<Animator>().SetInteger("TypeID", temp.typeId);
+            temp.display.spriteAnimator.SetInteger("TypeID", temp.typeId);
             enemies.Add(temp);
         }
         SetButtons();
@@ -242,7 +242,7 @@ public class CombatControl : MonoBehaviour
             }
 
             for (int j = 0; j < heroes.Count; j++) {
-                PlayerData.instance.SetHitpoint(j, heroes[j].health);
+                PlayerData.instance.SetHitpoint(j, heroes[j].GetHealth());
                 if (heroes[j].IsDead()) {
                     BattleLoader.LoadDungeonFromLose();
                     return;
@@ -295,7 +295,7 @@ public class CombatControl : MonoBehaviour
             }
 
             for (int j = 0; j < heroes.Count; j++) {
-                PlayerData.instance.SetHitpoint(j, heroes[j].health);
+                PlayerData.instance.SetHitpoint(j, heroes[j].GetHealth());
                 if (heroes[j].IsDead()) {
                     BattleLoader.LoadDungeonFromLose();
                     return;
@@ -315,9 +315,9 @@ public class CombatControl : MonoBehaviour
         Entity weakest = people[0];
         int lowest = 1000;
         for (int i=0; i<people.Count; i++){
-            if (people[i].health < lowest){
+            if (people[i].GetHealth() < lowest){
                 weakest = people[i];
-                lowest = people[i].health;
+                lowest = people[i].GetHealth();
             }
         }
         return weakest;

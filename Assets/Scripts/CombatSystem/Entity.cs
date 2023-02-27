@@ -6,44 +6,32 @@ using TMPro;
 
 public class Entity : MonoBehaviour
 {
-    public int health = 12;
-    public int max_health = 12;
+    [SerializeField]
+    private int health = 12;
+    [SerializeField]
+    private int maxHealth = 12;
     public string type = "";
     public string displayName = "";
     public List<string> skills = new List<string>();
     public IDictionary<Skill.Status, int> statuses = new Dictionary<Skill.Status, int>();
     public IDictionary<Skill.Status, float> statusPowers = new Dictionary<Skill.Status, float>();
     public bool is_enemy = false;
-    public HealthBar bar;
-    public SpriteBox box;
-    public TMP_Text nameText;
-    public Color baseBackground = new Color(0.25F, 0.25F, 0.25F, 1);
-    public Color hurtBackground = new Color(1, 0.25F, 0.25F, 1);
-    public Color healBackground = new Color(0, 0.8F, 0, 1);
-    public int flashTime = 50;
-    private SFXEngine sfx;
-    public Sprite normal;
-    public Sprite attacking;
-    public Sprite hurt;
-    public Sprite low;
-    public StatusDisplay statusDisplay;
-    public string hurtSound = "hurt";
-    public string healSound = "heal";
     public int level = 0;
     public int typeId = -1;
+    [SerializeField]
+    public EntityDisplay display;
 
     // Start is called before the first frame update
     void Start()
     {
-        sfx = GameObject.Find("SFX Engine").GetComponent<SFXEngine>();
-        box.SetBackgroundColor(baseBackground);
-        bar.SetValAndMaxVal(this.health, this.max_health);
-        nameText.text = displayName;
+        display.SetEntity(this);
+        display.InitialiseHealthDisplay();
+        display.SetName(displayName);
     }
 
     public void SetName(string name) {
         this.displayName = name;
-        this.nameText.text = name;
+        display.SetName(displayName);
     }
 
     public void SetEnemySkills(int health, int level)
@@ -118,11 +106,19 @@ public class Entity : MonoBehaviour
         
     }
 
+    public int GetHealth() {
+        return health;
+    }
+
+    public int GetMaxHealth() {
+        return maxHealth;
+    }
+
     public void SetHealth(int value, int max_value)
     {
         this.health = value;
-        this.max_health = max_value;
-        bar.SetValAndMaxVal(this.health, this.max_health);
+        this.maxHealth = max_value;
+        display.InitialiseHealthDisplay();
     }
 
     public void ChangeHealth(int value)
@@ -140,24 +136,21 @@ public class Entity : MonoBehaviour
                 }
             }
             if (value > 0) {
-                box.FlashBackgroundColor(hurtBackground, flashTime);
-                sfx.PlayClip(hurtSound);
+                display.PerformSpriteAnimation("hurt");
             }
             this.health -= value;
         }
-        if (value < 0)
-        {
-            box.FlashBackgroundColor(healBackground, flashTime*2);
-            sfx.PlayClip(healSound);
+        if (value < 0) {
+            display.PerformSpriteAnimation("heal");
             this.health -= value;
         }
         if (this.health < 0) {
             this.health = 0;
         }
-        if (this.health > this.max_health) {
-            this.health = this.max_health;
+        if (this.health > this.maxHealth) {
+            this.health = this.maxHealth;
         }
-        bar.SetValAndMaxVal(this.health, this.max_health);
+        display.UpdateHealthDisplay();
     }
 
     public void ModStatus(Skill.Status name, int duration, float power){
@@ -169,7 +162,7 @@ public class Entity : MonoBehaviour
             this.statusPowers.Add(name, power);
         }
         Debug.Log("Adding status");
-        UpdateStatusDisplay();
+        display.UpdateStatusDisplay();
     }
 
     public void UpdateStatuses() {
@@ -182,11 +175,7 @@ public class Entity : MonoBehaviour
                 this.statuses[key] = d;
             }
         }
-        UpdateStatusDisplay();
-    }
-
-    public void UpdateStatusDisplay() {
-        statusDisplay.UpdateStatuses(new List<Skill.Status>(this.statuses.Keys));
+        display.UpdateStatusDisplay();
     }
 
     public bool IsDead(){
