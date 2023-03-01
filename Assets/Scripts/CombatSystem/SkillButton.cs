@@ -24,13 +24,13 @@ public class SkillButton : MonoBehaviour
     void ScheduleSkill()
     {
         string mybuttontext = mybutton.name;
-        foreach (Skill s in mycombat.available_skills){
-            if (s.display_name == mybuttontext){
-                if (mycombat.hero_ap_left >= s.ap_cost){
+        foreach (Skill s in mycombat.availableSkills){
+            if (s.displayName == mybuttontext){
+                if (mycombat.heroApLeft >= s.apCost){
                     mytimeline.text += mybuttontext+"\n";
-                    mycombat.hero_timeline.Add(new CombatControl.Action() { skill = s, performer = performer, target = null });
-                    mycombat.hero_ap_left -= s.ap_cost;
-                    myapleft.text = mycombat.hero_ap_left.ToString();
+                    mycombat.heroTimeline.Add(new CombatControl.Action() { skill = s, performer = performer, target = null });
+                    mycombat.heroApLeft -= s.apCost;
+                    myapleft.text = mycombat.heroApLeft.ToString();
                 }
             }
         }

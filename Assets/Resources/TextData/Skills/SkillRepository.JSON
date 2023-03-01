@@ -1,0 +1,281 @@
+{
+  "skills": [
+    {
+      "skillID": "nullSkill",
+      "displayName": "Pass",
+      "apCost": 0,
+      "healthChange": [ 0, 0, 0 ],
+      "targetMode": "None",
+      "targetSide": "Self",
+      "statuses": []
+    },
+    {
+      "skillID": "punch",
+      "displayName": "Punch",
+      "apCost": 1,
+      "targetMode": "Chosen",
+      "targetSide": "Opponent",
+      "healthChange": [ 1, 6, 1 ],
+      "statuses": []
+    },
+    {
+      "skillID": "wrench",
+      "displayName": "Wrench",
+      "apCost": 2,
+      "targetMode": "Chosen",
+      "targetSide": "Opponent",
+      "healthChange": [ 1, 4, 0 ],
+      "statuses": [
+        {
+          "status": "Stunned",
+          "chance": 0.2,
+          "duration": 1,
+          "power": 1
+        }
+      ]
+    },
+    {
+      "skillID": "dash",
+      "displayName": "Dash",
+      "apCost": 2,
+      "targetMode": "Chosen",
+      "targetSide": "Self",
+      "healthChange": [ 0, 0, 0 ],
+      "statuses": [
+        {
+          "status": "Evasive",
+          "chance": 0.75,
+          "duration": 3,
+          "power": 0.5
+        }
+      ]
+    },
+    {
+      "skillID": "flyingkick",
+      "displayName": "Flying Kick",
+      "apCost": 3,
+      "targetMode": "Chosen",
+      "targetSide": "Opponent",
+      "healthChange": [ 3, 6, 0 ],
+      "statuses": []
+    },
+    {
+      "skillID": "tap",
+      "displayName": "Tap",
+      "apCost": 1,
+      "targetMode": "Chosen",
+      "targetSide": "Opponent",
+      "healthChange": [ 0, 0, 3 ],
+      "statuses": []
+    },
+    {
+      "skillID": "patchup",
+      "displayName": "Patch-up",
+      "apCost": 1,
+      "targetMode": "Chosen",
+      "targetSide": "Self",
+      "healthChange": [ -1, 4, 0 ],
+      "statuses": []
+    },
+    {
+      "skillID": "surge",
+      "displayName": "Surge",
+      "apCost": 2,
+      "targetMode": "Chosen",
+      "targetSide": "Self",
+      "healthChange": [ -2, 4, 2 ],
+      "statuses": []
+    },
+    {
+      "skillID": "massheal",
+      "displayName": "Mass-Heal",
+      "apCost": 3,
+      "targetMode": "All",
+      "targetSide": "Self",
+      "healthChange": [ -1, 2, 4 ],
+      "statuses": []
+    },
+    {
+      "skillID": "thwomp",
+      "displayName": "Thwomp",
+      "apCost": 1,
+      "targetMode": "Chosen",
+      "targetSide": "Opponent",
+      "healthChange": [ 1, 2, 2 ],
+      "statuses": [
+        {
+          "status": "Weak",
+          "chance": 0.5,
+          "duration": 1,
+          "power": 3
+        }
+      ]
+    },
+    {
+      "skillID": "block",
+      "displayName": "Block",
+      "apCost": 2,
+      "targetMode": "All",
+      "targetSide": "Self",
+      "healthChange": [ 0, 0, 0 ],
+      "statuses": [
+        {
+          "status": "Shielded",
+          "chance": 0.75,
+          "duration": 2,
+          "power": 3
+        }
+      ]
+    },
+    {
+      "skillID": "hold",
+      "displayName": "Hold",
+      "apCost": 2,
+      "targetMode": "Chosen",
+      "targetSide": "Opponent",
+      "healthChange": [ 1, 3, 3 ],
+      "statuses": [
+        {
+          "status": "Stunned",
+          "chance": 0.25,
+          "duration": 1,
+          "power": 1
+        }
+      ]
+    },
+    {
+      "skillID": "smash",
+      "displayName": "Smash",
+      "apCost": 3,
+      "targetMode": "Chosen",
+      "targetSide": "Opponent",
+      "healthChange": [ 1, 6, 3 ],
+      "statuses": [
+        {
+          "status": "Stunned",
+          "chance": 0.75,
+          "duration": 2,
+          "power": 1
+        }
+      ]
+    },
+    {
+      "skillID": "scratch",
+      "displayName": "Scratch",
+      "apCost": 1,
+      "targetMode": "Chosen",
+      "targetSide": "Opponent",
+      "healthChange": [ 0, 0, 1 ],
+      "statuses": [
+        {
+          "status": "Weak",
+          "chance": 0.25,
+          "duration": 2,
+          "power": 2
+        }
+      ]
+    },
+    {
+      "skillID": "meow",
+      "displayName": "Meow",
+      "apCost": 1,
+      "targetMode": "All",
+      "targetSide": "Self",
+      "healthChange": [ -1, 1, 1 ],
+      "statuses": []
+    },
+    {
+      "skillID": "batscreech",
+      "displayName": "Supersonic Screech",
+      "apCost": 1,
+      "targetMode": "Chosen",
+      "targetSide": "Opponent",
+      "healthChange": [ 1, 8, 0 ],
+      "statuses": []
+    },
+    {
+      "skillID": "slughug",
+      "displayName": "Sluggish Embrace",
+      "apCost": 1,
+      "targetMode": "All",
+      "targetSide": "Opponent",
+      "healthChange": [ 0, 0, 1 ],
+      "statuses": [
+        {
+          "status": "Weak",
+          "chance": 0.75,
+          "duration": 2,
+          "power": 3
+        }
+      ]
+    },
+    {
+      "skillID": "slugslime",
+      "displayName": "Corrosive Slime",
+      "apCost": 1,
+      "targetMode": "Random",
+      "targetSide": "Opponent",
+      "healthChange": [ 1, 4, 0 ],
+      "statuses": []
+    },
+    {
+      "skillID": "tardishield",
+      "displayName": "Cryptobiosis",
+      "apCost": 1,
+      "targetMode": "Chosen",
+      "targetSide": "Self",
+      "healthChange": [ 0, 0, 0 ],
+      "statuses": [
+        {
+          "status": "Shielded",
+          "chance": 0.75,
+          "duration": 2,
+          "power": 2
+        }
+      ]
+    },
+    {
+      "skillID": "tardicrush",
+      "displayName": "Intruder Countermeasures",
+      "apCost": 1,
+      "targetMode": "Chosen",
+      "targetSide": "Opponent",
+      "healthChange": [ 1, 6, 0 ],
+      "statuses": [
+        {
+          "status": "Weak",
+          "chance": 0.75,
+          "duration": 3,
+          "power": 2
+        }
+      ]
+    },
+    {
+      "skillID": "tardiregen",
+      "displayName": "Autodiagnosis",
+      "apCost": 1,
+      "targetMode": "Chosen",
+      "targetSide": "Self",
+      "healthChange": [ -1, 6, 1 ],
+      "statuses": []
+    },
+    {
+      "skillID": "eyebeam",
+      "displayName": "Scattershot Laser",
+      "apCost": 1,
+      "targetMode": "Random",
+      "targetSide": "Opponent",
+      "healthChange": [ 1, 4, 0 ],
+      "statuses": []
+    },
+    {
+      "skillID": "blobmorph",
+      "displayName": "Morphic Elimination",
+      "apCost": 1,
+      "targetMode": "All",
+      "targetSide": "Opponent",
+      "healthChange": [ 1, 6, 3 ],
+      "statuses": []
+    }
+  ]
+}

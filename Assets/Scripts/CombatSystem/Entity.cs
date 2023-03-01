@@ -125,13 +125,13 @@ public class Entity : MonoBehaviour
     {
         if (value > 0)
         {   
-            if (statuses.ContainsKey(Skill.Status.shielded)) {
-                value = Math.Max(1, (int)(value - statusPowers[Skill.Status.shielded]));
+            if (statuses.ContainsKey(Skill.Status.Shielded)) {
+                value = Math.Max(1, (int)(value - statusPowers[Skill.Status.Shielded]));
             }
-            if (IsAffected(Skill.Status.evasive)) {
+            if (IsAffected(Skill.Status.Evasive)) {
                 float decision = UnityEngine.Random.Range(0.0f, 1.0f);
-                Debug.Log(EffectPower(Skill.Status.evasive));
-                if (decision < EffectPower(Skill.Status.evasive)) {
+                Debug.Log(EffectPower(Skill.Status.Evasive));
+                if (decision < EffectPower(Skill.Status.Evasive)) {
                     value = 0;
                 }
             }
@@ -186,7 +186,7 @@ public class Entity : MonoBehaviour
     }
 
     public bool IsStunned() {
-        return statuses.ContainsKey(Skill.Status.stunned);
+        return statuses.ContainsKey(Skill.Status.Stunned);
     }
 
     public bool IsAffected(Skill.Status status) {
