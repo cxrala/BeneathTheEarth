@@ -153,6 +153,10 @@ PrefabInstance:
       value: Bar
       objectReference: {fileID: 0}
     - target: {fileID: 7587181488565604498, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
+      propertyPath: displayName
+      value: Chonk
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587181488565604498, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
       propertyPath: display_name
       value: Chonk
       objectReference: {fileID: 0}
@@ -463,12 +467,13 @@ MonoBehaviour:
   - {fileID: -615832311, guid: eeca7321722c64c7bb09161855a2b983, type: 3}
   - {fileID: 224041005, guid: 7e69c5bd9cf214f428c555fb25835953, type: 3}
   - {fileID: 422285538, guid: 8deb5866e1aa5a543842287bc705094b, type: 3}
-  skill_buttons: []
-  other_buttons: []
-  hero_timeline_text: {fileID: 1745053185}
-  enemy_timeline_text: {fileID: 1249991484}
-  ap_left: {fileID: 2037221123}
-  hero_ap_left: 4
+  availableSkills: []
+  skillButtons: []
+  otherButtons: []
+  heroTimelineText: {fileID: 1745053185}
+  enemyTimelineText: {fileID: 1249991484}
+  apLeft: {fileID: 2037221123}
+  heroApLeft: 4
   enemyPrefab: {fileID: 2368184930749981905, guid: 72051516aa3dedb429812d66ec12ab5b, type: 3}
   canvas: {fileID: 1472934483}
   enemyCentre: {x: 450, y: 280}
@@ -666,6 +671,10 @@ PrefabInstance:
     - target: {fileID: 5938063406794861462, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
       propertyPath: m_Name
       value: Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587181488565604498, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
+      propertyPath: displayName
+      value: Konkon
       objectReference: {fileID: 0}
     - target: {fileID: 7587181488565604498, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
       propertyPath: display_name
@@ -1121,6 +1130,10 @@ PrefabInstance:
       value: Bar
       objectReference: {fileID: 0}
     - target: {fileID: 7587181488565604498, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
+      propertyPath: displayName
+      value: Arki
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587181488565604498, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
       propertyPath: display_name
       value: Arki
       objectReference: {fileID: 0}
@@ -1432,6 +1445,10 @@ PrefabInstance:
     - target: {fileID: 5938063406794861462, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
       propertyPath: m_Name
       value: Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587181488565604498, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
+      propertyPath: displayName
+      value: Hila
       objectReference: {fileID: 0}
     - target: {fileID: 7587181488565604498, guid: 54b8481b0e1023246a7b5520ca5d3a04, type: 3}
       propertyPath: display_name

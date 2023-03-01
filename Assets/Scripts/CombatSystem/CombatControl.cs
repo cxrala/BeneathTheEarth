@@ -20,24 +20,24 @@ public class CombatControl : MonoBehaviour
     public Sprite[] normal = new Sprite[4];
     public Sprite[] hurt = new Sprite[4];
     public Sprite[] low = new Sprite[4];
-    public List<Action> hero_timeline = new List<Action>();
-    public List<Action> enemy_timeline = new List<Action>();
+    public List<Action> heroTimeline = new List<Action>();
+    public List<Action> enemyTimeline = new List<Action>();
 
-    public List<Skill> available_skills = new List<Skill>();
+    public List<Skill> availableSkills = new List<Skill>();
 
-    public GameObject[] skill_buttons;
-    public List<GameObject> other_buttons = new List<GameObject>();
+    public GameObject[] skillButtons;
+    public List<GameObject> otherButtons = new List<GameObject>();
 
-    private Color[] skill_colors;
-    private Color[] other_colors;
+    private Color[] skillColors;
+    private Color[] otherColors;
 
-    public TMP_Text hero_timeline_text;
-    public TMP_Text enemy_timeline_text;
-    public TMP_Text ap_left;
+    public TMP_Text heroTimelineText;
+    public TMP_Text enemyTimelineText;
+    public TMP_Text apLeft;
 
-    public SkillRepository myskills = new SkillRepository();
+    public SkillRepository myskills;
 
-    public int hero_ap_left = 4;
+    public int heroApLeft = 4;
 
     public GameObject enemyPrefab;
     public GameObject canvas;
@@ -54,18 +54,18 @@ public class CombatControl : MonoBehaviour
 
     private void SetButtons()
     {
-        skill_buttons = GameObject.FindGameObjectsWithTag("SkillButton");
-        skill_colors = new Color[skill_buttons.Length];
-        for (int i = 0; i < skill_buttons.Length; i++)
+        skillButtons = GameObject.FindGameObjectsWithTag("SkillButton");
+        skillColors = new Color[skillButtons.Length];
+        for (int i = 0; i < skillButtons.Length; i++)
         {
-            skill_colors[i] = skill_buttons[i].GetComponent<Image>().color;
+            skillColors[i] = skillButtons[i].GetComponent<Image>().color;
         }
-        other_buttons.Add(GameObject.Find("Reset"));
-        other_buttons.Add(GameObject.Find("Execute"));
-        other_colors = new Color[other_buttons.Count];
-        for (int i = 0; i < other_buttons.Count; i++)
+        otherButtons.Add(GameObject.Find("Reset"));
+        otherButtons.Add(GameObject.Find("Execute"));
+        otherColors = new Color[otherButtons.Count];
+        for (int i = 0; i < otherButtons.Count; i++)
         {
-            other_colors[i] = other_buttons[i].GetComponent<Image>().color;
+            otherColors[i] = otherButtons[i].GetComponent<Image>().color;
         }
 
         RoundSetup();
@@ -80,8 +80,17 @@ public class CombatControl : MonoBehaviour
 
     private void InitialiseBattle()
     {
+        Debug.Log("Attempt to load skills");
+        SkillRepository test = new SkillRepository(new string[]{ "TextData/Skills/SkillRepository" });
+        Debug.Log(test.allSkills);
+        Debug.Log(test.allSkills.Count);
+        foreach (string s in test.allSkills.Keys) {
+            Debug.Log(s);
+            Debug.Log(test.allSkills[s].skillID);
+        }
         Debug.Log("Attempting to initialise Battle");
         StartCoroutine(WaitingToReceiveBattleStart());
+        myskills = new SkillRepository(new string[] { "TextData/Skills/SkillRepository" });
         int[] hitpoint = PlayerData.instance.hitpoint;
         int[] maxhitpoint = PlayerData.instance.maxHitpoint;
 
@@ -128,62 +137,63 @@ public class CombatControl : MonoBehaviour
     }
 
     public void RoundSetup(){
-        for (int i = 0; i < skill_buttons.Length; i++) {
-            skill_buttons[i].SetActive(true);
-            skill_buttons[i].GetComponent<Image>().color = skill_colors[i];
-            skill_buttons[i].GetComponent<Button>().enabled = true;
+        for (int i = 0; i < skillButtons.Length; i++) {
+            skillButtons[i].SetActive(true);
+            skillButtons[i].GetComponent<Image>().color = skillColors[i];
+            skillButtons[i].GetComponent<Button>().enabled = true;
         }
 
-        for (int i = 0; i < other_buttons.Count; i++) {
-            other_buttons[i].SetActive(true);
-            other_buttons[i].GetComponent<Image>().color = other_colors[i];
-            other_buttons[i].GetComponent<Button>().enabled = true;
+        for (int i = 0; i < otherButtons.Count; i++) {
+            otherButtons[i].SetActive(true);
+            otherButtons[i].GetComponent<Image>().color = otherColors[i];
+            otherButtons[i].GetComponent<Button>().enabled = true;
         }
 
-        hero_timeline = new List<Action>();
-        enemy_timeline = new List<Action>();
-        hero_timeline_text.text = "";
-        enemy_timeline_text.text = "";
-        hero_ap_left = 4;
-        ap_left.text = hero_ap_left.ToString();
+        heroTimeline = new List<Action>();
+        enemyTimeline = new List<Action>();
+        heroTimelineText.text = "";
+        enemyTimelineText.text = "";
+        heroApLeft = 4;
+        apLeft.text = heroApLeft.ToString();
 
         // Line up enemy actions for this round.
-        enemy_timeline.Clear();
+        enemyTimeline.Clear();
         foreach (Entity e in enemies) {
             e.UpdateStatuses();
-            if (!e.statuses.ContainsKey(Skill.Status.stunned)) {
+            if (!e.statuses.ContainsKey(Skill.Status.Stunned)) {
                 foreach (string s in e.skills) {
                     if (s != "nullSkill") {
-                        enemy_timeline.Add(new Action() { skill = myskills.all_skills[s], performer = e, target = null });
+                        Debug.Log(s);
+                        enemyTimeline.Add(new Action() { skill = myskills.allSkills[s], performer = e, target = null });
                     }
                 }
             }
         }
         string new_enemy_timeline = "";
-        foreach (Action a in enemy_timeline){
-            new_enemy_timeline += a.skill.display_name+'\n';
+        foreach (Action a in enemyTimeline){
+            new_enemy_timeline += a.skill.displayName+'\n';
         }
-        enemy_timeline_text.text = new_enemy_timeline;
+        enemyTimelineText.text = new_enemy_timeline;
         // Show all hero skill buttons
 
         GameObject.Find("Reset").SetActive(true);
         GameObject.Find("Execute").SetActive(true);
 
-        available_skills = new List<Skill>();
+        availableSkills = new List<Skill>();
         foreach (Entity hero in heroes) {
             hero.UpdateStatuses();
             foreach (Skill s in myskills.StringsToSkills(hero.skills)){
-                available_skills.Add(s);
+                availableSkills.Add(s);
             }
         }
 
         List<GameObject> buttons_to_reactivate = new List<GameObject>();
-        foreach (Skill s in available_skills){
-            GameObject target = GameObject.Find(s.display_name);
+        foreach (Skill s in availableSkills){
+            GameObject target = GameObject.Find(s.displayName);
             buttons_to_reactivate.Add(target);
         };
 
-        foreach (GameObject g in skill_buttons) {
+        foreach (GameObject g in skillButtons) {
             g.SetActive(false);
         };
 
@@ -194,35 +204,37 @@ public class CombatControl : MonoBehaviour
 
     public async void LaunchCombatSequence(){
 
-        for (int i = 0; i < skill_buttons.Length; i++){
-            skill_buttons[i].GetComponent<Image>().color = new Color(skill_colors[i].r/2, skill_colors[i].g/2, skill_colors[i].b/2, skill_colors[i].a);
-            skill_buttons[i].GetComponent<Button>().enabled = false;
+        for (int i = 0; i < skillButtons.Length; i++){
+            skillButtons[i].GetComponent<Image>().color = new Color(skillColors[i].r/2, skillColors[i].g/2, skillColors[i].b/2, skillColors[i].a);
+            skillButtons[i].GetComponent<Button>().enabled = false;
         }
 
-        for (int i = 0; i < other_buttons.Count; i++)
+        for (int i = 0; i < otherButtons.Count; i++)
         {
-            other_buttons[i].GetComponent<Image>().color = other_colors[i] / 2;
-            other_buttons[i].GetComponent<Image>().color = new Color(other_colors[i].r / 2, other_colors[i].g / 2, other_colors[i].b / 2, other_colors[i].a);
-            other_buttons[i].GetComponent<Button>().enabled = false;
+            otherButtons[i].GetComponent<Image>().color = otherColors[i] / 2;
+            otherButtons[i].GetComponent<Image>().color = new Color(otherColors[i].r / 2, otherColors[i].g / 2, otherColors[i].b / 2, otherColors[i].a);
+            otherButtons[i].GetComponent<Button>().enabled = false;
         }
 
         Debug.Log("done hiding buttons");
 
         // List<Skill> hero_skills = new List<Skill>(hero_timeline);
-        for (int i=0; i<hero_timeline.Count; i++){
-            Action a = hero_timeline[i];
-            if (a.skill.target_mode == 1){
+        for (int i=0; i<heroTimeline.Count; i++){
+            Action a = heroTimeline[i];
+            Debug.Log(a.skill.skillID);
+            Debug.Log((int)a.skill.targetMode * (int)a.skill.targetSide);
+            if ((int) a.skill.targetMode * (int)a.skill.targetSide == 1){
                 a.skill.ApplySkill(enemies[0], a.performer);
-            } else if (a.skill.target_mode == -1){
+            } else if ((int)a.skill.targetMode * (int)a.skill.targetSide == -1){
                 a.skill.ApplySkill(GetWeakestEntity(heroes), a.performer); // just buff hero with lowest hp
-            } else if (a.skill.target_mode == -2){
+            } else if ((int)a.skill.targetMode * (int)a.skill.targetSide == -2){
                 a.skill.Use(heroes, a.performer);
-            } else if (a.skill.target_mode == -3){
+            } else if ((int)a.skill.targetMode * (int)a.skill.targetSide == -3){
                 a.skill.ApplySkill(GetRandomEntity(heroes), a.performer);
             }
-            List<string> hero_timeline_list = new List<string>(hero_timeline_text.text.Split('\n'));
+            List<string> hero_timeline_list = new List<string>(heroTimelineText.text.Split('\n'));
             hero_timeline_list.RemoveAt(0);
-            hero_timeline_text.text = string.Join('\n', hero_timeline_list);
+            heroTimelineText.text = string.Join('\n', hero_timeline_list);
             await Task.Delay(500);
             Debug.Log("done waiting.");
 
@@ -251,31 +263,31 @@ public class CombatControl : MonoBehaviour
         }
         Debug.Log("hero moves done.");
         // List<Skill> enemy_skills = new List<Skill>(enemy_timeline);
-        for (int i=0; i<enemy_timeline.Count; i++){
-            Action a = enemy_timeline[i];
+        for (int i=0; i<enemyTimeline.Count; i++){
+            Action a = enemyTimeline[i];
             if (!a.performer.IsDead() && !a.performer.IsStunned())
             {
-                if (a.skill.target_mode == 1)
+                if ((int) a.skill.targetMode * (int) a.skill.targetSide == -1)
                 {
                     a.skill.ApplySkill(enemies[0], a.performer);
                 }
-                else if (a.skill.target_mode == -1)
+                else if ((int)a.skill.targetMode * (int)a.skill.targetSide == 1)
                 {
-                    a.skill.ApplySkill(GetWeakestEntity(heroes), a.performer); // just buff hero with lowest hp
+                    a.skill.ApplySkill(GetWeakestEntity(heroes), a.performer); // just attack hero with lowest hp
                 }
-                else if (a.skill.target_mode == -2)
+                else if ((int)a.skill.targetMode * (int)a.skill.targetSide == 2)
                 {
                     a.skill.Use(heroes, a.performer);
                 }
-                else if (a.skill.target_mode == -3)
+                else if ((int)a.skill.targetMode * (int)a.skill.targetSide == 3)
                 {
                     a.skill.ApplySkill(GetRandomEntity(heroes), a.performer);
                 }
             }
 
-            List<string> enemy_timeline_list = new List<string>(enemy_timeline_text.text.Split('\n'));
+            List<string> enemy_timeline_list = new List<string>(enemyTimelineText.text.Split('\n'));
             enemy_timeline_list.RemoveAt(0);
-            enemy_timeline_text.text = string.Join('\n', enemy_timeline_list);
+            enemyTimelineText.text = string.Join('\n', enemy_timeline_list);
 
             await Task.Delay(500);
 
@@ -326,7 +338,7 @@ public class CombatControl : MonoBehaviour
     public int GetTimelineLength(List<Skill> timeline){
         int t = 0;
         foreach(Skill s in timeline){
-            t += s.ap_cost;
+            t += s.apCost;
         }
         return t;
     }
