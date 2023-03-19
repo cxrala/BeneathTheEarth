@@ -15,7 +15,7 @@ public class Entity : MonoBehaviour
     public List<string> skills = new List<string>();
     public IDictionary<Skill.Status, int> statuses = new Dictionary<Skill.Status, int>();
     public IDictionary<Skill.Status, float> statusPowers = new Dictionary<Skill.Status, float>();
-    public bool is_enemy = false;
+    public bool isEnemy = false;
     public int level = 0;
     public int typeId = -1;
     [SerializeField]
@@ -37,7 +37,7 @@ public class Entity : MonoBehaviour
     public void SetEnemySkills(int health, int level)
     {
         this.skills = new List<string>();
-        if (is_enemy == true)
+        if (isEnemy == true)
         {
             int new_health = health;
             for (int i = 0; i < level; i++)

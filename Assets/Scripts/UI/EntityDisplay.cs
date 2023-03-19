@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class EntityDisplay : MonoBehaviour
-{
+public class EntityDisplay : MonoBehaviour, IEntityDisplay {
     [SerializeField]
     private Entity baseEntity;
     [SerializeField]

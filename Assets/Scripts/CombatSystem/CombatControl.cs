@@ -15,14 +15,18 @@ public class CombatControl : MonoBehaviour
         public List<Entity> target;
     }
 
-    public List<Entity> heroes = new List<Entity>();
-    public List<Entity> enemies = new List<Entity>();
+    [SerializeField]
+    private List<Entity> heroes = new List<Entity>();
+    [SerializeField]
+    private List<Entity> enemies = new List<Entity>();
     public Sprite[] normal = new Sprite[4];
     public Sprite[] hurt = new Sprite[4];
     public Sprite[] low = new Sprite[4];
+
     public List<Action> heroTimeline = new List<Action>();
     public List<Action> enemyTimeline = new List<Action>();
 
+    [SerializeField] 
     public List<Skill> availableSkills = new List<Skill>();
 
     public GameObject[] skillButtons;
@@ -41,6 +45,7 @@ public class CombatControl : MonoBehaviour
 
     public GameObject enemyPrefab;
     public GameObject canvas;
+    public CombatControlDisplay combatDisplay;
 
     public Vector2 enemyCentre = new Vector2(450, 280);
 
@@ -120,7 +125,7 @@ public class CombatControl : MonoBehaviour
             tempRect.anchoredPosition = new Vector2(0, 0) + enemyCentre;
             temp.type = enemy.types[i];
             temp.displayName = enemy.names[i];
-            temp.is_enemy = true;
+            temp.isEnemy = true;
             temp.level = enemyLevel;
             temp.SetEnemySkills(enemy.maxHitpoints[i], enemy.levels[i]);
             //temp.box.spriteImage.transform.localScale = new Vector3(2, 2, 1);
@@ -169,11 +174,11 @@ public class CombatControl : MonoBehaviour
                 }
             }
         }
-        string new_enemy_timeline = "";
+        string newEnemyTimeline = "";
         foreach (Action a in enemyTimeline){
-            new_enemy_timeline += a.skill.displayName+'\n';
+            newEnemyTimeline += a.skill.displayName+'\n';
         }
-        enemyTimelineText.text = new_enemy_timeline;
+        enemyTimelineText.text = newEnemyTimeline;
         // Show all hero skill buttons
 
         GameObject.Find("Reset").SetActive(true);
@@ -187,18 +192,104 @@ public class CombatControl : MonoBehaviour
             }
         }
 
-        List<GameObject> buttons_to_reactivate = new List<GameObject>();
+        List<GameObject> buttonsToReactivate = new List<GameObject>();
         foreach (Skill s in availableSkills){
             GameObject target = GameObject.Find(s.displayName);
-            buttons_to_reactivate.Add(target);
+            buttonsToReactivate.Add(target);
         };
 
         foreach (GameObject g in skillButtons) {
             g.SetActive(false);
         };
 
-        foreach (GameObject g in buttons_to_reactivate) {
+        foreach (GameObject g in buttonsToReactivate) {
             g.SetActive(true);
+        }
+    }
+    // Executes the next skill in the action list
+    public void ExecuteSkill() {
+        if (heroTimeline.Count != 0) {
+            Action a = heroTimeline[0]; 
+            heroTimeline.RemoveAt(0);
+            Debug.Log(a.skill.skillID);
+            Debug.Log((int)a.skill.targetMode * (int)a.skill.targetSide);
+            if ((int)a.skill.targetMode * (int)a.skill.targetSide == 1) {
+                a.skill.ApplySkill(enemies[0], a.performer);
+            } else if ((int)a.skill.targetMode * (int)a.skill.targetSide == -1) {
+                a.skill.ApplySkill(GetWeakestEntity(heroes), a.performer); // just buff hero with lowest hp
+            } else if ((int)a.skill.targetMode * (int)a.skill.targetSide == -2) {
+                a.skill.Use(heroes, a.performer);
+            } else if ((int)a.skill.targetMode * (int)a.skill.targetSide == -3) {
+                a.skill.ApplySkill(GetRandomEntity(heroes), a.performer);
+            }
+            List<string> hero_timeline_list = new List<string>(heroTimelineText.text.Split('\n'));
+            hero_timeline_list.RemoveAt(0);
+            heroTimelineText.text = string.Join('\n', hero_timeline_list);
+            Debug.Log("done waiting.");
+
+            List<Entity> nextEnemies = new List<Entity>();
+            foreach (Entity e in enemies) {
+                if (e.IsDead()) {
+                    Destroy(e.gameObject);
+                } else {
+                    nextEnemies.Add(e);
+                }
+            }
+            enemies = nextEnemies;
+
+            if (enemies.Count == 0) {
+                BattleLoader.LoadDungeonFromWin();
+                return;
+            }
+
+            for (int j = 0; j < heroes.Count; j++) {
+                PlayerData.instance.SetHitpoint(j, heroes[j].GetHealth());
+                if (heroes[j].IsDead()) {
+                    BattleLoader.LoadDungeonFromLose();
+                    return;
+                }
+            }
+        } else if (enemyTimeline.Count != 0) {
+            Action a = enemyTimeline[0];
+            enemyTimeline.RemoveAt(0);
+            if (!a.performer.IsDead() && !a.performer.IsStunned()) {
+                if ((int)a.skill.targetMode * (int)a.skill.targetSide == -1) {
+                    a.skill.ApplySkill(enemies[0], a.performer);
+                } else if ((int)a.skill.targetMode * (int)a.skill.targetSide == 1) {
+                    a.skill.ApplySkill(GetWeakestEntity(heroes), a.performer); // just attack hero with lowest hp
+                } else if ((int)a.skill.targetMode * (int)a.skill.targetSide == 2) {
+                    a.skill.Use(heroes, a.performer);
+                } else if ((int)a.skill.targetMode * (int)a.skill.targetSide == 3) {
+                    a.skill.ApplySkill(GetRandomEntity(heroes), a.performer);
+                }
+            }
+
+            List<string> enemy_timeline_list = new List<string>(enemyTimelineText.text.Split('\n'));
+            enemy_timeline_list.RemoveAt(0);
+            enemyTimelineText.text = string.Join('\n', enemy_timeline_list);
+
+            List<Entity> nextEnemies = new List<Entity>();
+            foreach (Entity e in enemies) {
+                if (e.IsDead()) {
+                    Destroy(e.gameObject);
+                } else {
+                    nextEnemies.Add(e);
+                }
+            }
+            enemies = nextEnemies;
+
+            if (enemies.Count == 0) {
+                BattleLoader.LoadDungeonFromWin();
+                return;
+            }
+
+            for (int j = 0; j < heroes.Count; j++) {
+                PlayerData.instance.SetHitpoint(j, heroes[j].GetHealth());
+                if (heroes[j].IsDead()) {
+                    BattleLoader.LoadDungeonFromLose();
+                    return;
+                }
+            }
         }
     }
 
@@ -232,9 +323,9 @@ public class CombatControl : MonoBehaviour
             } else if ((int)a.skill.targetMode * (int)a.skill.targetSide == -3){
                 a.skill.ApplySkill(GetRandomEntity(heroes), a.performer);
             }
-            List<string> hero_timeline_list = new List<string>(heroTimelineText.text.Split('\n'));
-            hero_timeline_list.RemoveAt(0);
-            heroTimelineText.text = string.Join('\n', hero_timeline_list);
+            List<string> heroTimelineList = new List<string>(heroTimelineText.text.Split('\n'));
+            heroTimelineList.RemoveAt(0);
+            heroTimelineText.text = string.Join('\n', heroTimelineList);
             await Task.Delay(500);
             Debug.Log("done waiting.");
 
@@ -285,9 +376,9 @@ public class CombatControl : MonoBehaviour
                 }
             }
 
-            List<string> enemy_timeline_list = new List<string>(enemyTimelineText.text.Split('\n'));
-            enemy_timeline_list.RemoveAt(0);
-            enemyTimelineText.text = string.Join('\n', enemy_timeline_list);
+            List<string> enemyTimelineList = new List<string>(enemyTimelineText.text.Split('\n'));
+            enemyTimelineList.RemoveAt(0);
+            enemyTimelineText.text = string.Join('\n', enemyTimelineList);
 
             await Task.Delay(500);
 

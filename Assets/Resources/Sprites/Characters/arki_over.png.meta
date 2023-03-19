@@ -113,11 +113,47 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: arki_Overworld_0
+      name: arki_over_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c910996cecbfce64ba94e7d36c493a28
-      internalID: 1546105499
+      spriteID: ed645fbbb1fed8c44bae066cbfd7c4cd
+      internalID: -1572765614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_1
+      name: arki_over_1
       rect:
         serializedVersion: 2
         x: 32
@@ -152,14 +188,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9336327e707208443b5cd19d01137d95
-      internalID: 509633061
+      spriteID: ca8b5ffbd84e3f9438969508c1240567
+      internalID: 410988922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_2
+      name: arki_over_2
       rect:
         serializedVersion: 2
         x: 64
@@ -173,14 +209,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db2a330704fab3d45b5423127f2ea3f8
-      internalID: 1622696199
+      spriteID: ada7b2c9cd7a0424fb0c0f21728e09bd
+      internalID: 1980575122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_3
+      name: arki_over_3
       rect:
         serializedVersion: 2
         x: 96
@@ -194,14 +230,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa9514a10d2cf654d976f3a19682a1d2
-      internalID: -1533838462
+      spriteID: 093a3e6e59d91234ba423ab7f1bfb243
+      internalID: -247448003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_4
+      name: arki_over_4
       rect:
         serializedVersion: 2
         x: 0
@@ -215,14 +251,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 010ca14d1639b40448aa13cbc339dabd
-      internalID: -156384743
+      spriteID: 7b3059c1777f59d45879058484543582
+      internalID: 788738493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_5
+      name: arki_over_5
       rect:
         serializedVersion: 2
         x: 32
@@ -236,14 +272,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef946575514e5ba4ebcb2645635a951e
-      internalID: -189839901
+      spriteID: b306684bb406d11408822ec315873054
+      internalID: -2016925051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_6
+      name: arki_over_6
       rect:
         serializedVersion: 2
         x: 64
@@ -257,14 +293,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9df84599a81fdb44bf2f340aa2a46b0
-      internalID: -1223627138
+      spriteID: a2051ee89a954534a92b50ba30e58beb
+      internalID: 1075419026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_7
+      name: arki_over_7
       rect:
         serializedVersion: 2
         x: 96
@@ -278,14 +314,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff44e121692afe84db62bdd5f0e98a8c
-      internalID: 2008874467
+      spriteID: 45a38e87a29eb4447a8421dff3857d9c
+      internalID: 2140299970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_8
+      name: arki_over_8
       rect:
         serializedVersion: 2
         x: 0
@@ -299,14 +335,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63c1fcdc00d00f6418b57bce1ea82517
-      internalID: -1561288294
+      spriteID: 39e896d9dc20d4e43b197f40f4dfa205
+      internalID: 1916961922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_9
+      name: arki_over_9
       rect:
         serializedVersion: 2
         x: 32
@@ -320,14 +356,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fe77f3ac24553d4d872baa425cb6230
-      internalID: 560838569
+      spriteID: 5a31be33e9b5a534bb6adab7db120c4d
+      internalID: -43041003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_10
+      name: arki_over_10
       rect:
         serializedVersion: 2
         x: 64
@@ -341,14 +377,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46960da2df4fe4d48a8ef772db28b2f9
-      internalID: 1180629988
+      spriteID: 1f1009414e1dd9148b94cad83ea2cb7f
+      internalID: -779278342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_11
+      name: arki_over_11
       rect:
         serializedVersion: 2
         x: 96
@@ -362,14 +398,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f4ff7acb47b50240bc651c19eed18e0
-      internalID: -1898865191
+      spriteID: 9e88b123d35d37c4d8b47e3ff16522c6
+      internalID: -843849314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_12
+      name: arki_over_12
       rect:
         serializedVersion: 2
         x: 0
@@ -383,14 +419,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef579126524d8ee49ad0dd783925638a
-      internalID: 2004477669
+      spriteID: 0f67f9a7448719a4fa02ba6766c89dc9
+      internalID: -1420850903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_13
+      name: arki_over_13
       rect:
         serializedVersion: 2
         x: 32
@@ -404,14 +440,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 639f9a1e71417ba488fc90bdcc9c19cb
-      internalID: -1328245323
+      spriteID: c60d60a1574260446872d08e9babf4ca
+      internalID: 28427246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_14
+      name: arki_over_14
       rect:
         serializedVersion: 2
         x: 64
@@ -425,14 +461,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9419af52076e7c4e9d4721fa5dc770d
-      internalID: 1781565857
+      spriteID: c81ccca9ba788cf45b211227fbac3d3e
+      internalID: -354279463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arki_Overworld_15
+      name: arki_over_15
       rect:
         serializedVersion: 2
         x: 96
@@ -446,8 +482,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03e8465972a444b4a8c110b2ad3904ca
-      internalID: 196463031
+      spriteID: 970fab3280404f149991ca0a6ecb45c1
+      internalID: 2089565302
       vertices: []
       indices: 
       edges: []
@@ -463,22 +499,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      arki_Overworld_6: -1223627138
-      arki_Overworld_2: 1622696199
-      arki_Overworld_8: -1561288294
-      arki_Overworld_4: -156384743
-      arki_Overworld_0: 1546105499
-      arki_Overworld_14: 1781565857
-      arki_Overworld_12: 2004477669
-      arki_Overworld_13: -1328245323
-      arki_Overworld_15: 196463031
-      arki_Overworld_9: 560838569
-      arki_Overworld_1: 509633061
-      arki_Overworld_10: 1180629988
-      arki_Overworld_3: -1533838462
-      arki_Overworld_11: -1898865191
-      arki_Overworld_7: 2008874467
-      arki_Overworld_5: -189839901
+      arki_over_9: -43041003
+      arki_over_4: 788738493
+      arki_over_10: -779278342
+      arki_over_14: -354279463
+      arki_over_13: 28427246
+      arki_over_6: 1075419026
+      arki_over_7: 2140299970
+      arki_over_3: -247448003
+      arki_over_5: -2016925051
+      arki_over_0: -1572765614
+      arki_over_8: 1916961922
+      arki_over_1: 410988922
+      arki_over_12: -1420850903
+      arki_over_15: 2089565302
+      arki_over_2: 1980575122
+      arki_over_11: -843849314
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

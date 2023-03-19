@@ -113,11 +113,47 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chonk_Overworld_0
+      name: arki_over_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8057c5df395de014681b66047c187aaf
-      internalID: -285201630
+      spriteID: ed645fbbb1fed8c44bae066cbfd7c4cd
+      internalID: -1572765614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_1
+      name: arki_over_1
       rect:
         serializedVersion: 2
         x: 32
@@ -152,14 +188,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f656134ece3e1874c871910718c74726
-      internalID: 847225154
+      spriteID: ca8b5ffbd84e3f9438969508c1240567
+      internalID: 410988922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_2
+      name: arki_over_2
       rect:
         serializedVersion: 2
         x: 64
@@ -173,14 +209,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caa238ddb1ee3ec4f9adcdcba1b6c9b2
-      internalID: 1954316814
+      spriteID: ada7b2c9cd7a0424fb0c0f21728e09bd
+      internalID: 1980575122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_3
+      name: arki_over_3
       rect:
         serializedVersion: 2
         x: 96
@@ -194,14 +230,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa4d848ee5903554594ce5e0ec36b3c9
-      internalID: 2046448978
+      spriteID: 093a3e6e59d91234ba423ab7f1bfb243
+      internalID: -247448003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_4
+      name: arki_over_4
       rect:
         serializedVersion: 2
         x: 0
@@ -215,14 +251,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55b14964eeaf7324eb516b7b331f72c0
-      internalID: 1900691738
+      spriteID: 7b3059c1777f59d45879058484543582
+      internalID: 788738493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_5
+      name: arki_over_5
       rect:
         serializedVersion: 2
         x: 32
@@ -236,14 +272,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98b9bdec5c6e10943a2eb3ccd0e11310
-      internalID: -1636582982
+      spriteID: b306684bb406d11408822ec315873054
+      internalID: -2016925051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_6
+      name: arki_over_6
       rect:
         serializedVersion: 2
         x: 64
@@ -257,14 +293,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 160d3b36c3c3cb74e8e5a15bbf54f985
-      internalID: 1864613772
+      spriteID: a2051ee89a954534a92b50ba30e58beb
+      internalID: 1075419026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_7
+      name: arki_over_7
       rect:
         serializedVersion: 2
         x: 96
@@ -278,14 +314,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93d3a483d7b415b47b50b3d42922bd2a
-      internalID: 1523213649
+      spriteID: 45a38e87a29eb4447a8421dff3857d9c
+      internalID: 2140299970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_8
+      name: arki_over_8
       rect:
         serializedVersion: 2
         x: 0
@@ -299,14 +335,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c6472fbd557a0c4ab51c206aa1d012d
-      internalID: -742039607
+      spriteID: 39e896d9dc20d4e43b197f40f4dfa205
+      internalID: 1916961922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_9
+      name: arki_over_9
       rect:
         serializedVersion: 2
         x: 32
@@ -320,14 +356,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5272be0bc7ed3048bccd210c0f445f4
-      internalID: 959474496
+      spriteID: 5a31be33e9b5a534bb6adab7db120c4d
+      internalID: -43041003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_10
+      name: arki_over_10
       rect:
         serializedVersion: 2
         x: 64
@@ -341,14 +377,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6eae0224a291c8c4998ee2035a380bda
-      internalID: -2101226644
+      spriteID: 1f1009414e1dd9148b94cad83ea2cb7f
+      internalID: -779278342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_11
+      name: arki_over_11
       rect:
         serializedVersion: 2
         x: 96
@@ -362,14 +398,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 238a4cdab8dff1c48be44fcc1b5abcbb
-      internalID: 1104988288
+      spriteID: 9e88b123d35d37c4d8b47e3ff16522c6
+      internalID: -843849314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_12
+      name: arki_over_12
       rect:
         serializedVersion: 2
         x: 0
@@ -383,14 +419,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25fae0b8bdd3c1f469fd6fe6c59f8540
-      internalID: 1481676019
+      spriteID: 0f67f9a7448719a4fa02ba6766c89dc9
+      internalID: -1420850903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_13
+      name: arki_over_13
       rect:
         serializedVersion: 2
         x: 32
@@ -404,14 +440,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ea5d36d45e25c74bb259c59c482ad75
-      internalID: 724225012
+      spriteID: c60d60a1574260446872d08e9babf4ca
+      internalID: 28427246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_14
+      name: arki_over_14
       rect:
         serializedVersion: 2
         x: 64
@@ -425,14 +461,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3734d7e80c50f5c41854688e156e86d9
-      internalID: 346167539
+      spriteID: c81ccca9ba788cf45b211227fbac3d3e
+      internalID: -354279463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chonk_Overworld_15
+      name: arki_over_15
       rect:
         serializedVersion: 2
         x: 96
@@ -446,8 +482,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1578c1c20e1843846aca1dbe863f4688
-      internalID: -2027956837
+      spriteID: 970fab3280404f149991ca0a6ecb45c1
+      internalID: 2089565302
       vertices: []
       indices: 
       edges: []
@@ -463,22 +499,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Chonk_Overworld_15: -2027956837
-      Chonk_Overworld_4: 1900691738
-      Chonk_Overworld_6: 1864613772
-      Chonk_Overworld_9: 959474496
-      Chonk_Overworld_8: -742039607
-      Chonk_Overworld_10: -2101226644
-      Chonk_Overworld_13: 724225012
-      Chonk_Overworld_11: 1104988288
-      Chonk_Overworld_0: -285201630
-      Chonk_Overworld_1: 847225154
-      Chonk_Overworld_3: 2046448978
-      Chonk_Overworld_12: 1481676019
-      Chonk_Overworld_7: 1523213649
-      Chonk_Overworld_14: 346167539
-      Chonk_Overworld_2: 1954316814
-      Chonk_Overworld_5: -1636582982
+      arki_over_9: -43041003
+      arki_over_4: 788738493
+      arki_over_10: -779278342
+      arki_over_14: -354279463
+      arki_over_13: 28427246
+      arki_over_6: 1075419026
+      arki_over_7: 2140299970
+      arki_over_3: -247448003
+      arki_over_5: -2016925051
+      arki_over_0: -1572765614
+      arki_over_8: 1916961922
+      arki_over_1: 410988922
+      arki_over_12: -1420850903
+      arki_over_15: 2089565302
+      arki_over_2: 1980575122
+      arki_over_11: -843849314
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

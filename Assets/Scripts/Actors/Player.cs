@@ -8,9 +8,9 @@ using UnityEngine.Events;
 [RequireComponent(typeof(PlayerInput))]
 public class Player : Mover {
 
-    public SpriteRenderer spriteRenderer;
-    private Animator animator;
-    private PlayerInput playerInput;
+    public SpriteRenderer m_spriteRenderer;
+    private Animator m_animator;
+    private PlayerInput m_playerInput;
     private InputAction horizontalAction;
     private InputAction verticalAction;
     private InputAction menuAction;
@@ -24,44 +24,44 @@ public class Player : Mover {
 
     protected override void Start() {
         base.Start();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-        playerInput = GetComponent<PlayerInput>();
-        horizontalAction = playerInput.actions["LeftRight"];
-        verticalAction = playerInput.actions["UpDown"];
-        menuAction = playerInput.actions["Menu"];
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
+        m_animator = GetComponent<Animator>();
+        m_playerInput = GetComponent<PlayerInput>();
+        horizontalAction = m_playerInput.actions["LeftRight"];
+        verticalAction = m_playerInput.actions["UpDown"];
+        menuAction = m_playerInput.actions["Menu"];
     }
 
     private void Update() {
         float x = horizontalAction.ReadValue<float>();
         float y = verticalAction.ReadValue<float>();
 
-        animator.SetFloat("horizontal", x);
-        animator.SetFloat("vertical", y);
+        m_animator.SetFloat("horizontal", x);
+        m_animator.SetFloat("vertical", y);
         if (x != 0 || y != 0) {
             if (!moving) {
-                animator.SetTrigger("startMove");
+                m_animator.SetTrigger("startMove");
                 moving = true;
-                animator.SetBool("isMove", true);
+                m_animator.SetBool("isMove", true);
             }
             if (Math.Abs(x) > Math.Abs(y)) {
                 if (x < 0) {
-                    animator.SetInteger("direction", 3);
+                    m_animator.SetInteger("direction", 3);
                 } else {
-                    animator.SetInteger("direction", 1);
+                    m_animator.SetInteger("direction", 1);
                 }
             } else {
                 if (y < 0) {
-                    animator.SetInteger("direction", 2);
+                    m_animator.SetInteger("direction", 2);
                 } else {
-                    animator.SetInteger("direction", 0);
+                    m_animator.SetInteger("direction", 0);
                 }
             }
         } else {
             if (moving) {
-                animator.SetTrigger("endMove");
+                m_animator.SetTrigger("endMove");
                 moving = false;
-                animator.SetBool("isMove", false);
+                m_animator.SetBool("isMove", false);
             }
         };
 
@@ -69,8 +69,8 @@ public class Player : Mover {
     }
 
     public void SwapCharacter(int characterID) {
-        animator.SetInteger("character", characterID);
-        animator.SetTrigger("changeCharacter");
+        m_animator.SetInteger("character", characterID);
+        m_animator.SetTrigger("changeCharacter");
         PlayerData.instance.characterID = characterID;
     }
 
@@ -78,11 +78,11 @@ public class Player : Mover {
     {
         IEnumerator WaitUntilReady()
         {
-            while (animator == null)
+            while (m_animator == null)
             {
                 yield return null;
             }
-            animator.SetInteger("character", characterID);
+            m_animator.SetInteger("character", characterID);
         }
         StartCoroutine(WaitUntilReady());
     }

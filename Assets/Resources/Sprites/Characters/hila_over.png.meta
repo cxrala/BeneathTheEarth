@@ -113,11 +113,47 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hila_Overworld_0
+      name: arki_Overworld_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd054ec7816eda04a9d14081ebf6ff79
-      internalID: -627834381
+      spriteID: c910996cecbfce64ba94e7d36c493a28
+      internalID: 1546105499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_1
+      name: arki_Overworld_1
       rect:
         serializedVersion: 2
         x: 32
@@ -152,14 +188,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d75e0f44ea994fd4aa69ba7ba6e43b8c
-      internalID: -456561081
+      spriteID: 9336327e707208443b5cd19d01137d95
+      internalID: 509633061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_2
+      name: arki_Overworld_2
       rect:
         serializedVersion: 2
         x: 64
@@ -173,14 +209,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c609736bb78f5294cabb8a6e8dda4cce
-      internalID: -636708013
+      spriteID: db2a330704fab3d45b5423127f2ea3f8
+      internalID: 1622696199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_3
+      name: arki_Overworld_3
       rect:
         serializedVersion: 2
         x: 96
@@ -194,14 +230,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d78d4ae51a836d941ba6b60a7fa45abc
-      internalID: -2121136670
+      spriteID: aa9514a10d2cf654d976f3a19682a1d2
+      internalID: -1533838462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_4
+      name: arki_Overworld_4
       rect:
         serializedVersion: 2
         x: 0
@@ -215,14 +251,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a366a8a88199d9744a4934b0b2fe3299
-      internalID: 319385509
+      spriteID: 010ca14d1639b40448aa13cbc339dabd
+      internalID: -156384743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_5
+      name: arki_Overworld_5
       rect:
         serializedVersion: 2
         x: 32
@@ -236,14 +272,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 056ad806410fefb498fe0ec6aebddaa6
-      internalID: 1251290099
+      spriteID: ef946575514e5ba4ebcb2645635a951e
+      internalID: -189839901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_6
+      name: arki_Overworld_6
       rect:
         serializedVersion: 2
         x: 64
@@ -257,14 +293,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9fcbf58e86b2a14d970f10844990a3f
-      internalID: -1612897995
+      spriteID: d9df84599a81fdb44bf2f340aa2a46b0
+      internalID: -1223627138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_7
+      name: arki_Overworld_7
       rect:
         serializedVersion: 2
         x: 96
@@ -278,14 +314,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3643fd99dd3044e4f9b8a1863909410c
-      internalID: 1576572602
+      spriteID: ff44e121692afe84db62bdd5f0e98a8c
+      internalID: 2008874467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_8
+      name: arki_Overworld_8
       rect:
         serializedVersion: 2
         x: 0
@@ -299,14 +335,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7610ca8d83188804cae2dd257e885ec8
-      internalID: 1654473064
+      spriteID: 63c1fcdc00d00f6418b57bce1ea82517
+      internalID: -1561288294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_9
+      name: arki_Overworld_9
       rect:
         serializedVersion: 2
         x: 32
@@ -320,14 +356,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a17e5acb699c8974682fcc722dd5b063
-      internalID: 350923288
+      spriteID: 6fe77f3ac24553d4d872baa425cb6230
+      internalID: 560838569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_10
+      name: arki_Overworld_10
       rect:
         serializedVersion: 2
         x: 64
@@ -341,14 +377,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67a2d07816f5d904c839c2e06558aa42
-      internalID: -700412091
+      spriteID: 46960da2df4fe4d48a8ef772db28b2f9
+      internalID: 1180629988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_11
+      name: arki_Overworld_11
       rect:
         serializedVersion: 2
         x: 96
@@ -362,14 +398,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6db8b3959a4ffe74e9766d8517ad23bf
-      internalID: -1785581600
+      spriteID: 7f4ff7acb47b50240bc651c19eed18e0
+      internalID: -1898865191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_12
+      name: arki_Overworld_12
       rect:
         serializedVersion: 2
         x: 0
@@ -383,14 +419,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82b9ef6e680bc344fa21f4b9f13bbac5
-      internalID: -2139354278
+      spriteID: ef579126524d8ee49ad0dd783925638a
+      internalID: 2004477669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_13
+      name: arki_Overworld_13
       rect:
         serializedVersion: 2
         x: 32
@@ -404,14 +440,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be0bab38220c10e4ebe78195b7a2f22c
-      internalID: 1962044432
+      spriteID: 639f9a1e71417ba488fc90bdcc9c19cb
+      internalID: -1328245323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_14
+      name: arki_Overworld_14
       rect:
         serializedVersion: 2
         x: 64
@@ -425,14 +461,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55715551b8cbd9c4fa682cc08982a75a
-      internalID: 587242753
+      spriteID: b9419af52076e7c4e9d4721fa5dc770d
+      internalID: 1781565857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hila_Overworld_15
+      name: arki_Overworld_15
       rect:
         serializedVersion: 2
         x: 96
@@ -446,8 +482,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02c61be11c525c44ca6040d48fb4b9a1
-      internalID: 1429473461
+      spriteID: 03e8465972a444b4a8c110b2ad3904ca
+      internalID: 196463031
       vertices: []
       indices: 
       edges: []
@@ -463,22 +499,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hila_Overworld_6: -1612897995
-      Hila_Overworld_0: -627834381
-      Hila_Overworld_8: 1654473064
-      Hila_Overworld_11: -1785581600
-      Hila_Overworld_1: -456561081
-      Hila_Overworld_2: -636708013
-      Hila_Overworld_3: -2121136670
-      Hila_Overworld_13: 1962044432
-      Hila_Overworld_10: -700412091
-      Hila_Overworld_9: 350923288
-      Hila_Overworld_5: 1251290099
-      Hila_Overworld_7: 1576572602
-      Hila_Overworld_15: 1429473461
-      Hila_Overworld_4: 319385509
-      Hila_Overworld_12: -2139354278
-      Hila_Overworld_14: 587242753
+      arki_Overworld_6: -1223627138
+      arki_Overworld_2: 1622696199
+      arki_Overworld_8: -1561288294
+      arki_Overworld_4: -156384743
+      arki_Overworld_0: 1546105499
+      arki_Overworld_14: 1781565857
+      arki_Overworld_12: 2004477669
+      arki_Overworld_13: -1328245323
+      arki_Overworld_15: 196463031
+      arki_Overworld_9: 560838569
+      arki_Overworld_1: 509633061
+      arki_Overworld_10: 1180629988
+      arki_Overworld_3: -1533838462
+      arki_Overworld_11: -1898865191
+      arki_Overworld_7: 2008874467
+      arki_Overworld_5: -189839901
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
