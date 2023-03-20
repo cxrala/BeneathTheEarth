@@ -7,18 +7,6 @@ public class DialogueLoader : MonoBehaviour
 {
     public DialogueManager dialogueManager;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void LoadDialogue(string path) {
         Debug.Log("Loading dialogue " + path);
         TextAsset dialogueFile = Resources.Load<TextAsset>(path);

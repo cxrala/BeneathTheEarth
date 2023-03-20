@@ -4,14 +4,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ReorderItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+public class ReorderItem : Item, IBeginDragHandler, IDragHandler, IEndDragHandler {
     private ReorderList parentList;
     [SerializeField]
     private RectTransform m_rectTransform;
 
     public float listPosition;
 
-    public RectTransform rectTransform {
+    public new RectTransform rectTransform {
         get { return m_rectTransform; }
         private set { m_rectTransform = value; }
     }

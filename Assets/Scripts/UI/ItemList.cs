@@ -1,12 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReorderList : MonoBehaviour
-{
+public class ItemList : MonoBehaviour {
     [SerializeField]
-    public List<ReorderItem> baseList = new List<ReorderItem>();
+    private List<Item> baseList = new List<Item>();
     [SerializeField]
     private int m_itemHeight;
     public int itemHeight { get { return m_itemHeight; } private set { m_itemHeight = value; } }
@@ -18,42 +16,44 @@ public class ReorderList : MonoBehaviour
     [SerializeField]
     private Vector2 m_startPoint;
     public Vector2 startPoint {
-        get { return m_startPoint; } private set { m_startPoint = value; }
+        get { return m_startPoint; }
+        private set { m_startPoint = value; }
     }
     private Vector2 m_worldStartPoint;
     public Vector2 worldStartPoint {
-        get { return m_worldStartPoint; } private set { m_worldStartPoint = value; }
+        get { return m_worldStartPoint; }
+        private set { m_worldStartPoint = value; }
     }
 
     [SerializeField]
     private Vector2 m_itemPivot;
     public Vector2 itemPivot {
-        get { return m_itemPivot; } private set { m_itemPivot = value;}
+        get { return m_itemPivot; }
+        private set { m_itemPivot = value; }
     }
-    
-    public RectTransform rectTransform{
-        get { return m_rectTransform; } private set { m_rectTransform = value; }
+
+    public RectTransform rectTransform {
+        get { return m_rectTransform; }
+        private set { m_rectTransform = value; }
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         m_listDirection.Normalize();
         SetParents();
         UpdatePositions();
         Vector3[] corners = new Vector3[4];
         m_rectTransform.GetWorldCorners(corners);
-        worldStartPoint = new Vector2(corners[0].x*startPoint.x + corners[2].x*(1 - startPoint.x), corners[1].y*startPoint.y + corners[0].y*(1 - startPoint.y));
+        worldStartPoint = new Vector2(corners[0].x * startPoint.x + corners[2].x * (1 - startPoint.x), corners[1].y * startPoint.y + corners[0].y * (1 - startPoint.y));
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+
     }
 
     private void SetParents() {
-        foreach (ReorderItem i in baseList) {
+        foreach (Item i in baseList) {
             i.SetParent(this);
         }
     }
@@ -64,32 +64,14 @@ public class ReorderList : MonoBehaviour
         }
     }
 
-    // Allows for items to be moved from one index to another. 
-    public void MoveItem(ReorderItem item, int endIndex) {
-        int startIndex = baseList.IndexOf(item);
-        endIndex = Math.Min(Math.Max(0, endIndex), baseList.Count - 1);
-        if (startIndex < endIndex) {
-            for (int i = startIndex; i < endIndex; i++) {
-                baseList[i + 1].rectTransform.anchoredPosition = m_listDirection * m_itemHeight * i;
-                baseList[i] = baseList[i + 1];
-            }
-        } else {
-            for (int i = startIndex; i > endIndex; i--) {
-                baseList[i - 1].rectTransform.anchoredPosition = m_listDirection * m_itemHeight * i;
-                baseList[i] = baseList[i - 1];
-            }
-        }
-        baseList[endIndex] = item;
-    }
-
-    public void Add(ReorderItem item) {
+    public void Add(Item item) {
         baseList.Add(item);
         item.SetParent(this);
         // Updates all item positions
         UpdatePositions();
     }
 
-    public void Insert(int index, ReorderItem item) {
+    public void Insert(int index, Item item) {
         baseList.Insert(index, item);
         item.SetParent(this);
         // Updates all item positions
@@ -100,22 +82,11 @@ public class ReorderList : MonoBehaviour
         GameObject temp = baseList[baseList.Count - 1].gameObject;
         baseList.RemoveAt(baseList.Count - 1);
         Destroy(temp);
-        // Updates all item positions
-        UpdatePositions();
     }
 
     public void RemoveAt(int index) {
         GameObject temp = baseList[index].gameObject;
         baseList.RemoveAt(index);
         Destroy(temp);
-        // Updates all item positions
-        UpdatePositions();
-    }
-
-    public void Clear() {
-        foreach (ReorderItem item in baseList) {
-            Destroy(item.gameObject);
-        }
-        baseList.Clear();
     }
 }

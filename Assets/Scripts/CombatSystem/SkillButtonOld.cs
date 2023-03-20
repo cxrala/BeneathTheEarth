@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 
 
-public class SkillButton : MonoBehaviour
+public class SkillButtonOld : MonoBehaviour
 {
     public Button mybutton;
     public CombatControl mycombat;

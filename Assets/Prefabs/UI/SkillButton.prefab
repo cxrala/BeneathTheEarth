@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4182364082247027494}
   - component: {fileID: 4182364082247027495}
   - component: {fileID: 4182364082247027512}
-  - component: {fileID: 4182364082247027493}
+  - component: {fileID: 5901474958058952749}
   m_Layer: 5
-  m_Name: Punch
+  m_Name: SkillButton
   m_TagString: SkillButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
           m_StringArgument: Punch
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4182364082247027493
+--- !u!114 &5901474958058952749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,14 +144,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 4182364082247027514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 390fb63c437ca9f48a26d776780a92ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 2292476f792825f4caeaa1cd70c12e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mybutton: {fileID: 4182364082247027512}
-  mycombat: {fileID: 0}
+  m_rectTransform: {fileID: 4182364082247027513}
+  skill:
+    skillID: 
+    displayName: 
+    apCost: 0
+    healthChange: 
+    targetMode: 0
+    targetSide: 0
+    statuses: []
   performer: {fileID: 0}
-  mytimeline: {fileID: 0}
-  myapleft: {fileID: 0}
+  button: {fileID: 4182364082247027512}
+  combatControlDisplay: {fileID: 0}
+  text: {fileID: 4182364082582876928}
+  image: {fileID: 4182364082247027495}
 --- !u!1 &4182364082582876930
 GameObject:
   m_ObjectHideFlags: 0

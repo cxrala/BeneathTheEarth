@@ -35,10 +35,6 @@ public class DialogueManager : MonoBehaviour {
         playerInput = GetComponent<PlayerInput>();
     }
 
-    void Start() {
-
-    }
-
     public void ClearSprites() {
         sprites.Clear();
     }

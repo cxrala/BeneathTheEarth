@@ -22,8 +22,7 @@ public class Entity : MonoBehaviour
     public EntityDisplay display;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         display.SetEntity(this);
         display.InitialiseHealthDisplay();
         display.SetName(displayName);
@@ -98,13 +97,7 @@ public class Entity : MonoBehaviour
 
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    } 
 
     public int GetHealth() {
         return health;

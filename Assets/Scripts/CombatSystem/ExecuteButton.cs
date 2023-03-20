@@ -9,6 +9,7 @@ public class ExecuteButton : MonoBehaviour
 {
     public Button mybutton;
     public CombatControl mycombat;
+    public CombatControlDisplay combatDisplay;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,6 @@ public class ExecuteButton : MonoBehaviour
     // Update is called once per frame
     void LaunchCombat()
     {
-        mycombat.LaunchCombatSequence();
+        combatDisplay.Execute();
     }
 }

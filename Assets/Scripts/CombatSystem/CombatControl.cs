@@ -15,8 +15,7 @@ public class CombatControl : MonoBehaviour
         public List<Entity> target;
     }
 
-    [SerializeField]
-    private List<Entity> heroes = new List<Entity>();
+    public List<Entity> heroes = new List<Entity>();
     [SerializeField]
     private List<Entity> enemies = new List<Entity>();
     public Sprite[] normal = new Sprite[4];
@@ -35,9 +34,7 @@ public class CombatControl : MonoBehaviour
     private Color[] skillColors;
     private Color[] otherColors;
 
-    public TMP_Text heroTimelineText;
     public TMP_Text enemyTimelineText;
-    public TMP_Text apLeft;
 
     public SkillRepository myskills;
 
@@ -51,6 +48,8 @@ public class CombatControl : MonoBehaviour
 
     public int enemyLevel = 0;
 
+    public List<List<Skill>> heroSkills = new List<List<Skill>>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +58,7 @@ public class CombatControl : MonoBehaviour
 
     private void SetButtons()
     {
-        skillButtons = GameObject.FindGameObjectsWithTag("SkillButton");
+        skillButtons = new GameObject[0];
         skillColors = new Color[skillButtons.Length];
         for (int i = 0; i < skillButtons.Length; i++)
         {
@@ -110,6 +109,15 @@ public class CombatControl : MonoBehaviour
             }
         }
 
+        for (int i = 0; i < heroes.Count; i++) {
+            heroSkills.Add(new List<Skill>(4));
+            foreach (string s in heroes[i].skills) {
+                heroSkills[i].Add(myskills.StringToSkill(s));
+            }
+        }
+
+        combatDisplay.InitialiseBattle();
+
 
         Debug.Log("Initialising Enemies");
         EnemyData enemy = Data.GetObject("enemyData").GetComponent<Enemy>().data;
@@ -117,8 +125,8 @@ public class CombatControl : MonoBehaviour
         for (int i = 0; i < enemy.hitpoints.Count; i++)
         {
             Entity temp = Instantiate(enemyPrefab, new Vector3(0, 0, 0), Quaternion.identity).GetComponent<Entity>();
-            temp.transform.parent = canvas.transform;
             RectTransform tempRect = temp.GetComponent<RectTransform>();
+            tempRect.SetParent(canvas.transform);
             tempRect.anchorMax = new Vector2(0.5F, 0.5F);
             tempRect.anchorMin = new Vector2(0.5F, 0.5F);
             tempRect.pivot = new Vector2(0.5F, 0.5F);
@@ -156,10 +164,8 @@ public class CombatControl : MonoBehaviour
 
         heroTimeline = new List<Action>();
         enemyTimeline = new List<Action>();
-        heroTimelineText.text = "";
         enemyTimelineText.text = "";
         heroApLeft = 4;
-        apLeft.text = heroApLeft.ToString();
 
         // Line up enemy actions for this round.
         enemyTimeline.Clear();
@@ -195,7 +201,6 @@ public class CombatControl : MonoBehaviour
         List<GameObject> buttonsToReactivate = new List<GameObject>();
         foreach (Skill s in availableSkills){
             GameObject target = GameObject.Find(s.displayName);
-            buttonsToReactivate.Add(target);
         };
 
         foreach (GameObject g in skillButtons) {
@@ -222,9 +227,6 @@ public class CombatControl : MonoBehaviour
             } else if ((int)a.skill.targetMode * (int)a.skill.targetSide == -3) {
                 a.skill.ApplySkill(GetRandomEntity(heroes), a.performer);
             }
-            List<string> hero_timeline_list = new List<string>(heroTimelineText.text.Split('\n'));
-            hero_timeline_list.RemoveAt(0);
-            heroTimelineText.text = string.Join('\n', hero_timeline_list);
             Debug.Log("done waiting.");
 
             List<Entity> nextEnemies = new List<Entity>();
@@ -323,9 +325,6 @@ public class CombatControl : MonoBehaviour
             } else if ((int)a.skill.targetMode * (int)a.skill.targetSide == -3){
                 a.skill.ApplySkill(GetRandomEntity(heroes), a.performer);
             }
-            List<string> heroTimelineList = new List<string>(heroTimelineText.text.Split('\n'));
-            heroTimelineList.RemoveAt(0);
-            heroTimelineText.text = string.Join('\n', heroTimelineList);
             await Task.Delay(500);
             Debug.Log("done waiting.");
 
